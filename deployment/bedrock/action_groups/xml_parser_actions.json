@@ -1,0 +1,77 @@
+{
+  "actionGroupName": "XMLParserActions",
+  "description": "Action group for XML parsing and S3 operations",
+  "actionGroupExecutor": {
+    "lambda": "arn:aws:lambda:us-east-1:539247495490:function:MedicalRecordXMLParser"
+  },
+  "apiSchema": {
+    "payload": {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "XML Parser Agent API",
+        "version": "1.0.0",
+        "description": "API for parsing patient XML records from S3"
+      },
+      "paths": {
+        "/parse-patient-record": {
+          "post": {
+            "summary": "Parse patient XML record from S3",
+            "description": "Retrieves and parses a patient's XML medical record from S3 storage",
+            "operationId": "parsePatientRecord",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "patientName": {
+                        "type": "string",
+                        "description": "Name of the patient whose record to retrieve"
+                      }
+                    },
+                    "required": ["patientName"]
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successfully parsed patient record",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PatientData"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "Patient record not found"
+              },
+              "400": {
+                "description": "Invalid XML or parsing error"
+              }
+            }
+          }
+        }
+      },
+      "components": {
+        "schemas": {
+          "PatientData": {
+            "type": "object",
+            "properties": {
+              "patient_id": {"type": "string"},
+              "name": {"type": "string"},
+              "demographics": {"type": "object"},
+              "medical_history": {"type": "array"},
+              "medications": {"type": "array"},
+              "procedures": {"type": "array"},
+              "diagnoses": {"type": "array"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

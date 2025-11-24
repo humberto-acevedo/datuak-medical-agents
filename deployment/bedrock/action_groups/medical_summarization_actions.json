@@ -1,0 +1,73 @@
+{
+  "actionGroupName": "MedicalSummarizationActions",
+  "description": "Action group for medical data summarization and condition extraction",
+  "actionGroupExecutor": {
+    "lambda": "arn:aws:lambda:us-east-1:539247495490:function:MedicalSummarization"
+  },
+  "apiSchema": {
+    "payload": {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "Medical Summarization Agent API",
+        "version": "1.0.0",
+        "description": "API for generating medical summaries and extracting conditions"
+      },
+      "paths": {
+        "/generate-summary": {
+          "post": {
+            "summary": "Generate medical summary from patient data",
+            "description": "Creates comprehensive medical summary with condition identification",
+            "operationId": "generateMedicalSummary",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "patientData": {
+                        "type": "object",
+                        "description": "Structured patient data from XML parser"
+                      }
+                    },
+                    "required": ["patientData"]
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successfully generated medical summary",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/MedicalSummary"
+                    }
+                  }
+                }
+              },
+              "400": {
+                "description": "Invalid patient data or insufficient information"
+              }
+            }
+          }
+        }
+      },
+      "components": {
+        "schemas": {
+          "MedicalSummary": {
+            "type": "object",
+            "properties": {
+              "patient_id": {"type": "string"},
+              "summary_text": {"type": "string"},
+              "key_conditions": {"type": "array"},
+              "medication_summary": {"type": "string"},
+              "procedure_summary": {"type": "string"},
+              "chronological_events": {"type": "array"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

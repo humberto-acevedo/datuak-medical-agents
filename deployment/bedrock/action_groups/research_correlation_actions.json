@@ -1,0 +1,76 @@
+{
+  "actionGroupName": "ResearchCorrelationActions",
+  "description": "Action group for medical research search and correlation",
+  "actionGroupExecutor": {
+    "lambda": "arn:aws:lambda:us-east-1:539247495490:function:ResearchCorrelation"
+  },
+  "apiSchema": {
+    "payload": {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "Research Correlation Agent API",
+        "version": "1.0.0",
+        "description": "API for searching and correlating medical research"
+      },
+      "paths": {
+        "/correlate-research": {
+          "post": {
+            "summary": "Correlate medical research with patient conditions",
+            "description": "Searches medical databases and correlates research with identified conditions",
+            "operationId": "correlateResearch",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "medicalSummary": {
+                        "type": "object",
+                        "description": "Medical summary with identified conditions"
+                      }
+                    },
+                    "required": ["medicalSummary"]
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successfully correlated research findings",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/ResearchAnalysis"
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "No relevant research found"
+              },
+              "400": {
+                "description": "Invalid medical summary data"
+              }
+            }
+          }
+        }
+      },
+      "components": {
+        "schemas": {
+          "ResearchAnalysis": {
+            "type": "object",
+            "properties": {
+              "conditions_researched": {"type": "array"},
+              "research_findings": {"type": "array"},
+              "total_papers_found": {"type": "integer"},
+              "condition_correlations": {"type": "object"},
+              "research_insights": {"type": "object"},
+              "clinical_recommendations": {"type": "array"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

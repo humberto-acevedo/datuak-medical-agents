@@ -1,0 +1,102 @@
+{
+  "queries": [
+    {
+      "name": "MedicalRecord-ErrorAnalysis",
+      "description": "Analyze all errors across Lambda functions",
+      "queryString": "fields @timestamp, @message, @logStream, @requestId\n| filter @message like /ERROR/ or @message like /Exception/\n| parse @message /ERROR.*?(?<errorType>[A-Za-z]+Error)/ \n| parse @message /patient_id[=:]\\s*(?<patientId>[^\\s,}]+)/\n| stats count() by errorType, patientId\n| sort count desc\n| limit 50",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-PerformanceAnalysis",
+      "description": "Analyze Lambda function performance metrics",
+      "queryString": "fields @timestamp, @duration, @billedDuration, @memorySize, @maxMemoryUsed, @logStream\n| filter @type = \"REPORT\"\n| stats avg(@duration) as avgDuration, max(@duration) as maxDuration, pct(@duration, 95) as p95Duration, avg(@maxMemoryUsed/@memorySize*100) as avgMemoryUsedPercent by bin(5m)\n| sort @timestamp desc",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-PatientProcessing",
+      "description": "Track patient record processing",
+      "queryString": "fields @timestamp, @message\n| filter @message like /patient_id/ or @message like /Successfully/\n| parse @message /patient_id[=:]\\s*(?<patientId>[^\\s,}]+)/\n| parse @message /(?<status>Successfully|Failed)/\n| stats count() by patientId, status\n| sort count desc\n| limit 100",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-AuditTrail",
+      "description": "HIPAA audit trail for data access",
+      "queryString": "fields @timestamp, @message\n| filter @message like /data_access/ or @message like /processing_start/ or @message like /processing_complete/\n| parse @message /patient_id[=:]\\s*(?<patientId>[^\\s,}]+)/\n| parse @message /operation[=:]\\s*(?<operation>[^\\s,}]+)/\n| parse @message /request_id[=:]\\s*(?<requestId>[^\\s,}]+)/\n| display @timestamp, patientId, operation, requestId\n| sort @timestamp desc\n| limit 200",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-DataQualityMetrics",
+      "description": "Monitor data quality scores",
+      "queryString": "fields @timestamp, @message\n| filter @message like /data_quality_score/\n| parse @message /data_quality_score[=:]\\s*(?<qualityScore>[0-9.]+)/\n| parse @message /patient_id[=:]\\s*(?<patientId>[^\\s,}]+)/\n| stats avg(qualityScore) as avgQuality, min(qualityScore) as minQuality, max(qualityScore) as maxQuality by bin(1h)\n| sort @timestamp desc",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-ResearchCorrelation",
+      "description": "Track research correlation metrics",
+      "queryString": "fields @timestamp, @message\n| filter @message like /research/ and @message like /papers/\n| parse @message /(?<paperCount>[0-9]+)\\s+research papers/\n| parse @message /(?<conditionCount>[0-9]+)\\s+conditions/\n| parse @message /patient_id[=:]\\s*(?<patientId>[^\\s,}]+)/\n| stats avg(paperCount) as avgPapers, avg(conditionCount) as avgConditions by bin(1h)\n| sort @timestamp desc",
+      "logGroupNames": [
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-S3Operations",
+      "description": "Monitor S3 access patterns",
+      "queryString": "fields @timestamp, @message\n| filter @message like /s3/ or @message like /S3/\n| parse @message /s3_path[=:]\\s*(?<s3Path>[^\\s,}]+)/\n| parse @message /operation[=:]\\s*(?<operation>[^\\s,}]+)/\n| stats count() by operation, s3Path\n| sort count desc\n| limit 50",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-ColdStarts",
+      "description": "Identify Lambda cold starts",
+      "queryString": "fields @timestamp, @type, @initDuration, @duration, @logStream\n| filter @type = \"REPORT\"\n| filter ispresent(@initDuration)\n| stats count() as coldStarts, avg(@initDuration) as avgInitDuration, max(@initDuration) as maxInitDuration by bin(1h)\n| sort @timestamp desc",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-TimeoutWarnings",
+      "description": "Identify functions approaching timeout",
+      "queryString": "fields @timestamp, @duration, @logStream\n| filter @type = \"REPORT\" and @duration > 270000\n| stats count() as nearTimeouts, avg(@duration) as avgDuration by @logStream\n| sort nearTimeouts desc",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    },
+    {
+      "name": "MedicalRecord-MemoryUsage",
+      "description": "Analyze memory usage patterns",
+      "queryString": "fields @timestamp, @memorySize, @maxMemoryUsed, @logStream\n| filter @type = \"REPORT\"\n| stats avg(@maxMemoryUsed) as avgMemoryUsed, max(@maxMemoryUsed) as maxMemoryUsed, avg(@maxMemoryUsed/@memorySize*100) as avgMemoryPercent by @logStream\n| sort avgMemoryPercent desc",
+      "logGroupNames": [
+        "/aws/lambda/MedicalRecordXMLParser",
+        "/aws/lambda/MedicalSummarization",
+        "/aws/lambda/ResearchCorrelation"
+      ]
+    }
+  ]
+}

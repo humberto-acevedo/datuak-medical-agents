@@ -1,0 +1,287 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudWatch Alarms for Medical Record Analysis System
+
+Parameters:
+  SNSTopicArn:
+    Type: String
+    Description: SNS Topic ARN for alarm notifications
+    Default: ""
+  
+  Environment:
+    Type: String
+    Default: production
+    AllowedValues:
+      - development
+      - staging
+      - production
+
+Conditions:
+  HasSNSTopic: !Not [!Equals [!Ref SNSTopicArn, ""]]
+
+Resources:
+  # Lambda Error Alarms
+  XMLParserHighErrorRateAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-XMLParser-HighErrorRate'
+      AlarmDescription: XML Parser Lambda function has high error rate
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: MedicalRecordXMLParser
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  MedicalSummarizationHighErrorRateAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-MedicalSummarization-HighErrorRate'
+      AlarmDescription: Medical Summarization Lambda function has high error rate
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: MedicalSummarization
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  ResearchCorrelationHighErrorRateAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-ResearchCorrelation-HighErrorRate'
+      AlarmDescription: Research Correlation Lambda function has high error rate
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: ResearchCorrelation
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  # Lambda Duration Alarms
+  XMLParserHighDurationAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-XMLParser-HighDuration'
+      AlarmDescription: XML Parser Lambda function approaching timeout
+      MetricName: Duration
+      Namespace: AWS/Lambda
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 270000  # 270 seconds (90% of 300s timeout)
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: MedicalRecordXMLParser
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  MedicalSummarizationHighDurationAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-MedicalSummarization-HighDuration'
+      AlarmDescription: Medical Summarization Lambda function approaching timeout
+      MetricName: Duration
+      Namespace: AWS/Lambda
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 270000
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: MedicalSummarization
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  ResearchCorrelationHighDurationAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-ResearchCorrelation-HighDuration'
+      AlarmDescription: Research Correlation Lambda function approaching timeout
+      MetricName: Duration
+      Namespace: AWS/Lambda
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 270000
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: ResearchCorrelation
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  # Lambda Throttle Alarms
+  XMLParserThrottleAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-XMLParser-Throttles'
+      AlarmDescription: XML Parser Lambda function is being throttled
+      MetricName: Throttles
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: MedicalRecordXMLParser
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  MedicalSummarizationThrottleAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-MedicalSummarization-Throttles'
+      AlarmDescription: Medical Summarization Lambda function is being throttled
+      MetricName: Throttles
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: MedicalSummarization
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  ResearchCorrelationThrottleAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-ResearchCorrelation-Throttles'
+      AlarmDescription: Research Correlation Lambda function is being throttled
+      MetricName: Throttles
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: ResearchCorrelation
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  # API Gateway Alarms
+  APIGatewayHighErrorRateAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-APIGateway-HighErrorRate'
+      AlarmDescription: API Gateway has high 5XX error rate
+      MetricName: 5XXError
+      Namespace: AWS/ApiGateway
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10
+      ComparisonOperator: GreaterThanThreshold
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  APIGatewayHighLatencyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-APIGateway-HighLatency'
+      AlarmDescription: API Gateway has high latency
+      MetricName: Latency
+      Namespace: AWS/ApiGateway
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 5000  # 5 seconds
+      ComparisonOperator: GreaterThanThreshold
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  # Composite Alarm for System Health
+  SystemHealthCompositeAlarm:
+    Type: AWS::CloudWatch::CompositeAlarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-SystemHealth-Critical'
+      AlarmDescription: Critical system health issues detected
+      AlarmRule: !Sub |
+        ALARM(${XMLParserHighErrorRateAlarm}) OR
+        ALARM(${MedicalSummarizationHighErrorRateAlarm}) OR
+        ALARM(${ResearchCorrelationHighErrorRateAlarm}) OR
+        ALARM(${APIGatewayHighErrorRateAlarm})
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+
+  # Custom Metric Alarms
+  HighPatientProcessingFailureRate:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-HighPatientProcessingFailureRate'
+      AlarmDescription: High rate of patient processing failures
+      MetricName: PatientProcessingFailures
+      Namespace: MedicalRecordAnalysis
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+  LowDataQualityScoreAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'MedicalRecord-${Environment}-LowDataQualityScore'
+      AlarmDescription: Patient data quality scores are consistently low
+      MetricName: AverageDataQualityScore
+      Namespace: MedicalRecordAnalysis
+      Statistic: Average
+      Period: 3600
+      EvaluationPeriods: 2
+      Threshold: 0.5
+      ComparisonOperator: LessThanThreshold
+      AlarmActions:
+        - !If [HasSNSTopic, !Ref SNSTopicArn, !Ref AWS::NoValue]
+      TreatMissingData: notBreaching
+
+Outputs:
+  XMLParserErrorAlarmArn:
+    Description: ARN of XML Parser error alarm
+    Value: !GetAtt XMLParserHighErrorRateAlarm.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-XMLParserErrorAlarm'
+
+  SystemHealthAlarmArn:
+    Description: ARN of system health composite alarm
+    Value: !GetAtt SystemHealthCompositeAlarm.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-SystemHealthAlarm'

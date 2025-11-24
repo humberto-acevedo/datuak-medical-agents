@@ -1,0 +1,288 @@
+{
+  "dashboardName": "MedicalRecordAnalysis-Production",
+  "dashboardBody": {
+    "widgets": [
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 0,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/Lambda", "Invocations", {"stat": "Sum", "label": "XML Parser"}],
+            ["...", {"stat": "Sum", "label": "Medical Summarization"}],
+            ["...", {"stat": "Sum", "label": "Research Correlation"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "Lambda Invocations",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Count"
+            }
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 12,
+        "y": 0,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/Lambda", "Errors", {"stat": "Sum", "label": "XML Parser", "color": "#d62728"}],
+            ["...", {"stat": "Sum", "label": "Medical Summarization", "color": "#ff7f0e"}],
+            ["...", {"stat": "Sum", "label": "Research Correlation", "color": "#e377c2"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "Lambda Errors",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Count"
+            }
+          },
+          "annotations": {
+            "horizontal": [
+              {
+                "label": "Error Threshold",
+                "value": 5,
+                "fill": "above",
+                "color": "#d62728"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 6,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/Lambda", "Duration", {"stat": "Average", "label": "XML Parser Avg"}],
+            ["...", {"stat": "p99", "label": "XML Parser p99"}],
+            ["...", {"stat": "Average", "label": "Medical Summarization Avg"}],
+            ["...", {"stat": "p99", "label": "Medical Summarization p99"}],
+            ["...", {"stat": "Average", "label": "Research Correlation Avg"}],
+            ["...", {"stat": "p99", "label": "Research Correlation p99"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "Lambda Duration (ms)",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Milliseconds"
+            }
+          },
+          "annotations": {
+            "horizontal": [
+              {
+                "label": "Timeout Warning",
+                "value": 270000,
+                "fill": "above",
+                "color": "#ff7f0e"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 12,
+        "y": 6,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/Lambda", "ConcurrentExecutions", {"stat": "Maximum", "label": "XML Parser"}],
+            ["...", {"stat": "Maximum", "label": "Medical Summarization"}],
+            ["...", {"stat": "Maximum", "label": "Research Correlation"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "Concurrent Executions",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Count"
+            }
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 12,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/ApiGateway", "Count", {"stat": "Sum", "label": "Total Requests"}],
+            [".", "4XXError", {"stat": "Sum", "label": "4XX Errors", "color": "#ff7f0e"}],
+            [".", "5XXError", {"stat": "Sum", "label": "5XX Errors", "color": "#d62728"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "API Gateway Requests",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Count"
+            }
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 8,
+        "y": 12,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/ApiGateway", "Latency", {"stat": "Average", "label": "Average Latency"}],
+            ["...", {"stat": "p99", "label": "p99 Latency"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "API Gateway Latency (ms)",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Milliseconds"
+            }
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 16,
+        "y": 12,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/S3", "NumberOfObjects", {"stat": "Average", "label": "Patient Records"}],
+            [".", "BucketSizeBytes", {"stat": "Average", "label": "Bucket Size", "yAxis": "right"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "S3 Storage Metrics",
+          "period": 86400,
+          "yAxis": {
+            "left": {
+              "label": "Objects"
+            },
+            "right": {
+              "label": "Bytes"
+            }
+          }
+        }
+      },
+      {
+        "type": "log",
+        "x": 0,
+        "y": 18,
+        "width": 24,
+        "height": 6,
+        "properties": {
+          "query": "SOURCE '/aws/lambda/MedicalRecordXMLParser'\n| SOURCE '/aws/lambda/MedicalSummarization'\n| SOURCE '/aws/lambda/ResearchCorrelation'\n| fields @timestamp, @message\n| filter @message like /ERROR/\n| sort @timestamp desc\n| limit 20",
+          "region": "us-east-1",
+          "title": "Recent Errors (All Functions)",
+          "stacked": false
+        }
+      },
+      {
+        "type": "log",
+        "x": 0,
+        "y": 24,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "query": "SOURCE '/aws/lambda/MedicalRecordXMLParser'\n| SOURCE '/aws/lambda/MedicalSummarization'\n| SOURCE '/aws/lambda/ResearchCorrelation'\n| fields @timestamp, @message\n| filter @message like /patient_id/\n| stats count() by bin(5m)",
+          "region": "us-east-1",
+          "title": "Patient Processing Rate",
+          "stacked": false
+        }
+      },
+      {
+        "type": "log",
+        "x": 12,
+        "y": 24,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "query": "SOURCE '/aws/lambda/MedicalRecordXMLParser'\n| SOURCE '/aws/lambda/MedicalSummarization'\n| SOURCE '/aws/lambda/ResearchCorrelation'\n| fields @timestamp, @duration\n| filter @type = \"REPORT\"\n| stats avg(@duration), max(@duration), pct(@duration, 95) by bin(5m)",
+          "region": "us-east-1",
+          "title": "Function Duration Statistics",
+          "stacked": false
+        }
+      },
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 30,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/Lambda", "Throttles", {"stat": "Sum", "label": "XML Parser"}],
+            ["...", {"stat": "Sum", "label": "Medical Summarization"}],
+            ["...", {"stat": "Sum", "label": "Research Correlation"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "Lambda Throttles",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Count"
+            }
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 12,
+        "y": 30,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            ["AWS/Logs", "IncomingBytes", {"stat": "Sum", "label": "Log Volume"}],
+            [".", "IncomingLogEvents", {"stat": "Sum", "label": "Log Events", "yAxis": "right"}]
+          ],
+          "view": "timeSeries",
+          "stacked": false,
+          "region": "us-east-1",
+          "title": "CloudWatch Logs Volume",
+          "period": 300,
+          "yAxis": {
+            "left": {
+              "label": "Bytes"
+            },
+            "right": {
+              "label": "Events"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

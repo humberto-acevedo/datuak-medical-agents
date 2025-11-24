@@ -1,0 +1,96 @@
+version: 0.2
+
+# AWS CodeBuild buildspec for Medical Record Analysis System
+# This buildspec handles building, testing, and packaging the application
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "Installing dependencies..."
+      - python3 -m pip install --upgrade pip
+      - python3 -m pip install -r requirements.txt
+      - python3 -m pip install pytest pytest-cov boto3 moto
+      - python3 -m pip install aws-sam-cli
+      
+  pre_build:
+    commands:
+      - echo "Running pre-build checks..."
+      - echo "Build started on `date`"
+      - echo "Running linting..."
+      - python3 -m pip install flake8 black
+      - flake8 src/ --max-line-length=120 --exclude=__pycache__,venv || true
+      - echo "Running security checks..."
+      - python3 -m pip install bandit
+      - bandit -r src/ -ll || true
+      
+  build:
+    commands:
+      - echo "Running tests..."
+      - export PYTHONPATH="${PYTHONPATH}:${CODEBUILD_SRC_DIR}/src"
+      - pytest tests/ -v --cov=src --cov-report=xml --cov-report=html --cov-report=term
+      - echo "Test coverage report generated"
+      
+      - echo "Building Lambda deployment package..."
+      - cd deployment/lambda
+      - mkdir -p layer/python
+      - python3 -m pip install -r ../../requirements.txt -t layer/python/ --upgrade
+      
+      - echo "Building SAM application..."
+      - sam build --template-file template.yaml --use-container
+      
+      - echo "Packaging SAM application..."
+      - sam package \
+          --template-file .aws-sam/build/template.yaml \
+          --s3-bucket ${DEPLOYMENT_BUCKET} \
+          --output-template-file packaged.yaml \
+          --region us-east-1
+      
+      - cd ../..
+      
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+      - echo "Generating build artifacts..."
+      
+      # Create deployment manifest
+      - |
+        cat > deployment_manifest.json <<EOF
+        {
+          "buildId": "${CODEBUILD_BUILD_ID}",
+          "buildNumber": "${CODEBUILD_BUILD_NUMBER}",
+          "sourceVersion": "${CODEBUILD_RESOLVED_SOURCE_VERSION}",
+          "buildTime": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+          "environment": "${ENVIRONMENT}",
+          "region": "us-east-1"
+        }
+        EOF
+      
+      - echo "Deployment manifest created"
+      - cat deployment_manifest.json
+
+artifacts:
+  files:
+    - deployment/lambda/packaged.yaml
+    - deployment/lambda/**/*
+    - deployment/bedrock/**/*
+    - deployment/monitoring/**/*
+    - deployment_manifest.json
+    - requirements.txt
+  name: medical-record-analysis-build-$(date +%Y%m%d-%H%M%S)
+
+reports:
+  test-reports:
+    files:
+      - 'coverage.xml'
+    file-format: 'COBERTURAXML'
+  coverage-reports:
+    files:
+      - 'htmlcov/**/*'
+    file-format: 'HTML'
+
+cache:
+  paths:
+    - '/root/.cache/pip/**/*'
+    - 'venv/**/*'

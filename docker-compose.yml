@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  xml-parser-agent:
+    build: .
+    container_name: xml-parser-agent
+    environment:
+      - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - S3_BUCKET=patient-records-20251024
+      - AGENT_TYPE=xml_parser
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+    networks:
+      - medical-analysis
+    depends_on:
+      - localstack
+
+  medical-summarization-agent:
+    build: .
+    container_name: medical-summarization-agent
+    environment:
+      - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AGENT_TYPE=medical_summarization
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+    networks:
+      - medical-analysis
+
+  research-correlation-agent:
+    build: .
+    container_name: research-correlation-agent
+    environment:
+      - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AGENT_TYPE=research_correlation
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+    networks:
+      - medical-analysis
+
+  # LocalStack for local S3 testing
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - AWS_DEFAULT_REGION=us-east-1
+    volumes:
+      - localstack_data:/tmp/localstack
+    networks:
+      - medical-analysis
+
+networks:
+  medical-analysis:
+    driver: bridge
+
+volumes:
+  localstack_data:

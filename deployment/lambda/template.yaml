@@ -1,0 +1,345 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Medical Record Analysis System - Lambda Functions for Bedrock Agents
+
+Parameters:
+  Environment:
+    Type: String
+    Default: production
+    AllowedValues:
+      - development
+      - staging
+      - production
+    Description: Deployment environment
+  
+  S3BucketName:
+    Type: String
+    Default: patient-records-20251024
+    Description: S3 bucket name for patient records
+  
+  LambdaTimeout:
+    Type: Number
+    Default: 300
+    Description: Lambda function timeout in seconds
+  
+  LambdaMemorySize:
+    Type: Number
+    Default: 512
+    Description: Lambda function memory size in MB
+
+Globals:
+  Function:
+    Runtime: python3.11
+    Timeout: !Ref LambdaTimeout
+    MemorySize: !Ref LambdaMemorySize
+    Environment:
+      Variables:
+        ENVIRONMENT: !Ref Environment
+        S3_BUCKET_NAME: !Ref S3BucketName
+        AWS_REGION: us-east-1
+        LOG_LEVEL: INFO
+    Tags:
+      Application: MedicalRecordAnalysis
+      Compliance: HIPAA
+      Environment: !Ref Environment
+
+Resources:
+  # Lambda Execution Role
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: MedicalRecordAnalysisLambdaRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: MedicalRecordAnalysisLambdaPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Sid: S3Access
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:ListBucket
+                  - s3:GetObjectVersion
+                Resource:
+                  - !Sub 'arn:aws:s3:::${S3BucketName}'
+                  - !Sub 'arn:aws:s3:::${S3BucketName}/*'
+                Condition:
+                  StringEquals:
+                    aws:RequestedRegion: us-east-1
+              - Sid: KMSAccess
+                Effect: Allow
+                Action:
+                  - kms:Decrypt
+                  - kms:Encrypt
+                  - kms:GenerateDataKey
+                  - kms:DescribeKey
+                Resource: !Sub 'arn:aws:kms:us-east-1:${AWS::AccountId}:key/*'
+                Condition:
+                  StringEquals:
+                    kms:ViaService: s3.us-east-1.amazonaws.com
+              - Sid: CloudWatchLogs
+                Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !Sub 'arn:aws:logs:us-east-1:${AWS::AccountId}:log-group:/aws/lambda/medical-record-*'
+      Tags:
+        - Key: Application
+          Value: MedicalRecordAnalysis
+        - Key: Compliance
+          Value: HIPAA
+
+  # Lambda Layer for shared dependencies
+  MedicalRecordAnalysisLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: medical-record-analysis-dependencies
+      Description: Shared dependencies for Medical Record Analysis Lambda functions
+      ContentUri: ./layer/
+      CompatibleRuntimes:
+        - python3.11
+      RetentionPolicy: Retain
+    Metadata:
+      BuildMethod: python3.11
+
+  # XML Parser Lambda Function
+  XMLParserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: MedicalRecordXMLParser
+      Description: Parses patient XML records from S3
+      CodeUri: ./
+      Handler: xml_parser_handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Layers:
+        - !Ref MedicalRecordAnalysisLayer
+      Environment:
+        Variables:
+          FUNCTION_NAME: XMLParser
+      Events:
+        ApiGatewayEvent:
+          Type: Api
+          Properties:
+            Path: /parse-patient-record
+            Method: POST
+            RestApiId: !Ref MedicalRecordAnalysisAPI
+      Tags:
+        Component: XMLParser
+
+  # Medical Summarization Lambda Function
+  MedicalSummarizationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: MedicalSummarization
+      Description: Generates medical summaries from patient data
+      CodeUri: ./
+      Handler: medical_summarization_handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Layers:
+        - !Ref MedicalRecordAnalysisLayer
+      Environment:
+        Variables:
+          FUNCTION_NAME: MedicalSummarization
+      Events:
+        ApiGatewayEvent:
+          Type: Api
+          Properties:
+            Path: /generate-summary
+            Method: POST
+            RestApiId: !Ref MedicalRecordAnalysisAPI
+      Tags:
+        Component: MedicalSummarization
+
+  # Research Correlation Lambda Function
+  ResearchCorrelationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: ResearchCorrelation
+      Description: Correlates medical research with patient conditions
+      CodeUri: ./
+      Handler: research_correlation_handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Layers:
+        - !Ref MedicalRecordAnalysisLayer
+      Environment:
+        Variables:
+          FUNCTION_NAME: ResearchCorrelation
+      Events:
+        ApiGatewayEvent:
+          Type: Api
+          Properties:
+            Path: /correlate-research
+            Method: POST
+            RestApiId: !Ref MedicalRecordAnalysisAPI
+      Tags:
+        Component: ResearchCorrelation
+
+  # API Gateway
+  MedicalRecordAnalysisAPI:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: MedicalRecordAnalysisAPI
+      StageName: !Ref Environment
+      Description: API Gateway for Medical Record Analysis Lambda functions
+      Cors:
+        AllowMethods: "'POST, GET, OPTIONS'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: "'*'"  # Configure appropriately for production
+      Auth:
+        ApiKeyRequired: true
+      Tags:
+        Application: MedicalRecordAnalysis
+        Compliance: HIPAA
+
+  # API Key
+  MedicalRecordAnalysisAPIKey:
+    Type: AWS::ApiGateway::ApiKey
+    DependsOn:
+      - MedicalRecordAnalysisAPIproductionStage
+    Properties:
+      Name: MedicalRecordAnalysisAPIKey
+      Description: API Key for Medical Record Analysis API
+      Enabled: true
+      StageKeys:
+        - RestApiId: !Ref MedicalRecordAnalysisAPI
+          StageName: !Ref Environment
+
+  # Usage Plan
+  MedicalRecordAnalysisUsagePlan:
+    Type: AWS::ApiGateway::UsagePlan
+    DependsOn:
+      - MedicalRecordAnalysisAPIproductionStage
+    Properties:
+      UsagePlanName: MedicalRecordAnalysisUsagePlan
+      Description: Usage plan for Medical Record Analysis API
+      ApiStages:
+        - ApiId: !Ref MedicalRecordAnalysisAPI
+          Stage: !Ref Environment
+      Throttle:
+        BurstLimit: 100
+        RateLimit: 50
+      Quota:
+        Limit: 10000
+        Period: DAY
+
+  # Usage Plan Key
+  MedicalRecordAnalysisUsagePlanKey:
+    Type: AWS::ApiGateway::UsagePlanKey
+    Properties:
+      KeyId: !Ref MedicalRecordAnalysisAPIKey
+      KeyType: API_KEY
+      UsagePlanId: !Ref MedicalRecordAnalysisUsagePlan
+
+  # CloudWatch Log Groups
+  XMLParserLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${XMLParserFunction}'
+      RetentionInDays: 30
+
+  MedicalSummarizationLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${MedicalSummarizationFunction}'
+      RetentionInDays: 30
+
+  ResearchCorrelationLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${ResearchCorrelationFunction}'
+      RetentionInDays: 30
+
+  # CloudWatch Alarms
+  XMLParserErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: MedicalRecord-XMLParser-Errors
+      AlarmDescription: Alert when XML Parser Lambda has errors
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref XMLParserFunction
+
+  MedicalSummarizationErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: MedicalRecord-MedicalSummarization-Errors
+      AlarmDescription: Alert when Medical Summarization Lambda has errors
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref MedicalSummarizationFunction
+
+  ResearchCorrelationErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: MedicalRecord-ResearchCorrelation-Errors
+      AlarmDescription: Alert when Research Correlation Lambda has errors
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref ResearchCorrelationFunction
+
+Outputs:
+  XMLParserFunctionArn:
+    Description: ARN of XML Parser Lambda Function
+    Value: !GetAtt XMLParserFunction.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-XMLParserFunctionArn'
+
+  MedicalSummarizationFunctionArn:
+    Description: ARN of Medical Summarization Lambda Function
+    Value: !GetAtt MedicalSummarizationFunction.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-MedicalSummarizationFunctionArn'
+
+  ResearchCorrelationFunctionArn:
+    Description: ARN of Research Correlation Lambda Function
+    Value: !GetAtt ResearchCorrelationFunction.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-ResearchCorrelationFunctionArn'
+
+  APIEndpoint:
+    Description: API Gateway endpoint URL
+    Value: !Sub 'https://${MedicalRecordAnalysisAPI}.execute-api.${AWS::Region}.amazonaws.com/${Environment}'
+    Export:
+      Name: !Sub '${AWS::StackName}-APIEndpoint'
+
+  APIKey:
+    Description: API Key ID
+    Value: !Ref MedicalRecordAnalysisAPIKey
+
+  LambdaExecutionRoleArn:
+    Description: ARN of Lambda Execution Role
+    Value: !GetAtt LambdaExecutionRole.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-LambdaExecutionRoleArn'

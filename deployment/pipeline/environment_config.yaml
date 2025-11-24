@@ -1,0 +1,173 @@
+# Environment-specific configurations for Medical Record Analysis System
+
+# Development Environment
+development:
+  aws:
+    region: us-east-1
+    account_id: "539247495490"
+  
+  lambda:
+    timeout: 300
+    memory_size: 512
+    reserved_concurrent_executions: 5
+    log_level: DEBUG
+  
+  api_gateway:
+    throttle_burst_limit: 50
+    throttle_rate_limit: 25
+    quota_limit: 5000
+    quota_period: DAY
+  
+  s3:
+    bucket_name: patient-records-20251024-dev
+    versioning: Enabled
+    encryption: AES256
+  
+  cloudwatch:
+    log_retention_days: 7
+    detailed_monitoring: false
+  
+  tags:
+    Environment: development
+    CostCenter: Development
+    ManagedBy: Terraform
+
+# Staging Environment
+staging:
+  aws:
+    region: us-east-1
+    account_id: "539247495490"
+  
+  lambda:
+    timeout: 300
+    memory_size: 512
+    reserved_concurrent_executions: 10
+    log_level: INFO
+  
+  api_gateway:
+    throttle_burst_limit: 75
+    throttle_rate_limit: 40
+    quota_limit: 7500
+    quota_period: DAY
+  
+  s3:
+    bucket_name: patient-records-20251024-staging
+    versioning: Enabled
+    encryption: AES256
+  
+  cloudwatch:
+    log_retention_days: 14
+    detailed_monitoring: true
+  
+  tags:
+    Environment: staging
+    CostCenter: Staging
+    ManagedBy: Terraform
+
+# Production Environment
+production:
+  aws:
+    region: us-east-1
+    account_id: "539247495490"
+  
+  lambda:
+    timeout: 300
+    memory_size: 1024
+    reserved_concurrent_executions: 50
+    log_level: INFO
+  
+  api_gateway:
+    throttle_burst_limit: 100
+    throttle_rate_limit: 50
+    quota_limit: 10000
+    quota_period: DAY
+  
+  s3:
+    bucket_name: patient-records-20251024
+    versioning: Enabled
+    encryption: AES256
+  
+  cloudwatch:
+    log_retention_days: 30
+    detailed_monitoring: true
+  
+  alarms:
+    error_threshold: 10
+    duration_threshold: 270000
+    throttle_threshold: 5
+    sns_topic_arn: arn:aws:sns:us-east-1:539247495490:medical-record-analysis-alerts
+  
+  tags:
+    Environment: production
+    CostCenter: Production
+    ManagedBy: Terraform
+    Compliance: HIPAA
+
+# Blue-Green Deployment Configuration
+blue_green:
+  enabled: true
+  traffic_shift_type: Linear  # Linear, Canary, or AllAtOnce
+  traffic_shift_interval: 10  # minutes
+  pre_traffic_hook: PreTrafficHook
+  post_traffic_hook: PostTrafficHook
+  alarm_configuration:
+    enabled: true
+    alarms:
+      - MedicalRecord-production-XMLParser-HighErrorRate
+      - MedicalRecord-production-MedicalSummarization-HighErrorRate
+      - MedicalRecord-production-ResearchCorrelation-HighErrorRate
+
+# Rollback Configuration
+rollback:
+  automatic: true
+  alarm_threshold: 5  # errors
+  alarm_evaluation_periods: 2
+  rollback_on_alarm: true
+  preserve_versions: 5  # number of versions to keep
+
+# Monitoring Configuration
+monitoring:
+  cloudwatch_dashboard: true
+  xray_tracing: true
+  enhanced_monitoring: true
+  custom_metrics: true
+  
+  metrics:
+    - PatientProcessingSuccess
+    - PatientProcessingFailures
+    - DataQualityScore
+    - ResearchPapersFound
+    - ConditionsIdentified
+    - ProcessingDuration
+
+# Security Configuration
+security:
+  encryption_at_rest: true
+  encryption_in_transit: true
+  kms_key_rotation: true
+  vpc_enabled: false  # Set to true for VPC deployment
+  security_groups: []
+  subnet_ids: []
+  
+  iam:
+    least_privilege: true
+    mfa_required: false
+    password_policy:
+      minimum_length: 14
+      require_symbols: true
+      require_numbers: true
+      require_uppercase: true
+      require_lowercase: true
+
+# Compliance Configuration
+compliance:
+  hipaa: true
+  audit_logging: true
+  data_residency: us-east-1
+  log_file_validation: true
+  access_logging: true
+  
+  retention:
+    logs: 30  # days
+    backups: 90  # days
+    audit_trails: 2555  # days (7 years)
