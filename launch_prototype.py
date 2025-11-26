@@ -95,6 +95,9 @@ def setup_test_environment(verbose: bool = False):
         print(f"   AWS Profile: {os.environ['AWS_PROFILE']}")
     print(f"   Log Level: {os.environ['LOG_LEVEL']}")
     print()
+    print("💡 Tip: Use --bedrock flag to use AWS Bedrock Claude AI")
+    print("   Example: python launch_prototype.py --bedrock")
+    print()
     return True
 
 def check_dependencies():
@@ -123,22 +126,39 @@ def check_dependencies():
     print("✅ All required dependencies found")
     return True
 
-async def run_prototype_test():
+async def run_prototype_test(use_bedrock: bool = False):
     """Run a quick prototype test."""
-    print("🚀 Starting Medical Record Analysis System Prototype Test")
+    if use_bedrock:
+        print("🚀 Starting Medical Record Analysis System - Bedrock Claude Version")
+    else:
+        print("🚀 Starting Medical Record Analysis System - Python Agents Version")
     print("=" * 60)
     
     try:
-        # Import main components
-        from src.main import main_async
-        
-        print("📋 System components loaded successfully")
-        print("🏥 Launching Medical Record Analysis System...")
-        print()
-        
-        # Run the main application
-        result = await main_async()
-        return result
+        if use_bedrock:
+            # Import Bedrock main
+            from src.main_bedrock import main as bedrock_main
+            
+            print("📋 Bedrock components loaded successfully")
+            print("🤖 Using AWS Bedrock Claude AI for analysis")
+            print("🏥 Launching Medical Record Analysis System...")
+            print()
+            
+            # Run the Bedrock application (synchronous)
+            result = bedrock_main()
+            return result
+        else:
+            # Import original main components
+            from src.main import main_async
+            
+            print("📋 System components loaded successfully")
+            print("🐍 Using Python-based agents for analysis")
+            print("🏥 Launching Medical Record Analysis System...")
+            print()
+            
+            # Run the main application
+            result = await main_async()
+            return result
         
     except ImportError as e:
         print(f"❌ Import error: {e}")
@@ -157,8 +177,15 @@ def main():
     
     parser = argparse.ArgumentParser(description="Launch prototype tests")
     parser.add_argument('-v', '--verbose', action='store_true', help='Show credential diagnostics')
+    parser.add_argument('--bedrock', action='store_true', 
+                       help='Use AWS Bedrock Claude AI instead of Python agents')
+    parser.add_argument('--python', action='store_true',
+                       help='Use Python-based agents (default)')
     args = parser.parse_args()
 
+    # Determine which version to use
+    use_bedrock = args.bedrock
+    
     # Check dependencies
     if not check_dependencies():
         return 1
@@ -167,9 +194,23 @@ def main():
     if not setup_test_environment(verbose=args.verbose):
         return 1
     
+    # Show version info
+    if use_bedrock:
+        print("🤖 Mode: AWS Bedrock Claude AI")
+        print("   - Medical summarization: Claude 3.5 Haiku")
+        print("   - Research analysis: Claude 3.5 Haiku")
+        print("   - Cost: ~$0.001 per analysis (very affordable!)")
+        print()
+    else:
+        print("🐍 Mode: Python-based Agents")
+        print("   - Medical summarization: Python algorithms")
+        print("   - Research correlation: Simulated research database")
+        print()
+    
     # Run prototype
     try:
-        return asyncio.run(run_prototype_test())
+        # Both versions now run through asyncio for consistency
+        return asyncio.run(run_prototype_test(use_bedrock=use_bedrock))
     except KeyboardInterrupt:
         print("\n\n👋 Prototype test interrupted by user")
         return 0

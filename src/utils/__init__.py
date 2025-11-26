@@ -3,6 +3,7 @@
 from .s3_client import S3Client, create_s3_client
 from .patient_resolver import PatientResolver
 from .logging_config import AuditLogger, setup_logging, HIIPAAFormatter
+from .bedrock_client import BedrockClient
 
 __all__ = [
     "S3Client",
@@ -10,5 +11,6 @@ __all__ = [
     "PatientResolver",
     "AuditLogger",
     "setup_logging",
-    "HIIPAAFormatter"
+    "HIIPAAFormatter",
+    "BedrockClient"
 ]

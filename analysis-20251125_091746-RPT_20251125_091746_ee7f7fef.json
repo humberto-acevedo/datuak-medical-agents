@@ -1,0 +1,1515 @@
+{
+  "patient_data": {
+    "patient_id": "MRN-9621",
+    "name": "Jane Smith",
+    "demographics": {
+      "age": 19,
+      "gender": "Female",
+      "date_of_birth": "2006-02-21",
+      "address": "123 DustyDepot Ave, Springfield, Oregon, 00000",
+      "phone": null,
+      "emergency_contact": null
+    },
+    "medical_history": [
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c07ebb123c12",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c07fa72d1714",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c080fc80c84c",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c08102861acb",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c082d8ec0025",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c083e40d596a",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c084ce9f51f6",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c0851b4edb6b",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c086bebc5e49",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c9da-7038-b481-c087922b27fd",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c754-7fc7-bdd7-2fe14b547fb1",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-b705-7983-8499-6fe4c69d1a5a",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-b523-7c14-9cde-140c84174c78",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-9e60-7100-9932-feb148379730",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-ec58-7e0a-9f28-404364afba4c",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-c00c-718f-b61d-ca75fe612f00",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      },
+      {
+        "event_id": "0198ec2d-bbba-7dfe-b2d7-340f5f448fee",
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "provider": null,
+        "location": null,
+        "severity": null,
+        "status": null
+      }
+    ],
+    "medications": [
+      {
+        "medication_id": "0198ec2d-b523-7c14-9cde-13a95ec49c8a",
+        "name": "sertraline HCl 50 MG Oral Tablet",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "05/19/2025",
+        "end_date": "05/25/2025",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "stopped"
+      },
+      {
+        "medication_id": "0198ec2d-bbba-7dfe-b2d7-33a44eb94d5d",
+        "name": "HYDROcodone bitartrate 5 MG / acetaminophen 325 MG Oral Tablet",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "05/30/2023",
+        "end_date": null,
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-b6e0-7acb-b15b-347bc69204bb",
+        "name": "omeprazole 20 MG Delayed Release Oral Capsule",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": null,
+        "end_date": "06/21/2025",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "active"
+      },
+      {
+        "medication_id": "0198ec2e-0a29-7748-9f36-9eacb342e3ee",
+        "name": "ketorolac tromethamine 15 MG in 1 ML Cartridge",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "04/26/2025",
+        "end_date": null,
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-bf98-7815-b5a9-5e9936c2d439",
+        "name": "omeprazole 20 MG Delayed Release Oral Tablet",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": null,
+        "end_date": "06/21/2025",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "active"
+      },
+      {
+        "medication_id": "0198ec2d-bf98-7815-b5a9-5e9ac95cf21f",
+        "name": "FLUoxetine 20 MG Oral Tablet (PMDD)",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "08/28/2022",
+        "end_date": null,
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "active"
+      },
+      {
+        "medication_id": "0198ec2d-bf98-7815-b5a9-5e9bafa62d8d",
+        "name": "omeprazole 20 MG Delayed Release Oral Capsule",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "08/12/2022",
+        "end_date": null,
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "active"
+      },
+      {
+        "medication_id": "0198ec2d-c6c3-76c8-8531-c432c23a3eb4",
+        "name": "sodium chloride 0.9 % in 1000 ML Injection",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "09/04/2022",
+        "end_date": "09/04/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-c6c3-76c8-8531-c4337b59d318",
+        "name": "levETIRAcetam 500 MG in 5 ML Injection",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "09/04/2022",
+        "end_date": "09/04/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-c6c3-76c8-8531-c43409908a12",
+        "name": "midazolam 5 MG in 5 ML Injection",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "09/04/2022",
+        "end_date": "09/04/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-c6c3-76c8-8531-c435792ffeca",
+        "name": "midazolam 5 MG in 5 ML Injection",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "09/04/2022",
+        "end_date": "09/04/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-c6c3-76c8-8531-c43690a81524",
+        "name": "dexAMETHasone sodium phosphate 10 MG in 1 ML Injection",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "09/04/2022",
+        "end_date": "09/04/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-c6ea-7c92-ac5d-ccd6bbf906f8",
+        "name": "amoxicillin 875 MG / clavulanate potassium 125 MG Oral Tablet",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "07/15/2022",
+        "end_date": "07/15/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-93e3-7b14-91d1-f346ef2e7f2e",
+        "name": "cephalexin 250 MG Oral Capsule",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "06/09/2022",
+        "end_date": "06/09/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-93e3-7b14-91d1-f347ab7818cd",
+        "name": "ondansetron 4 MG in 2 ML Injection",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "06/09/2022",
+        "end_date": "06/09/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-93e3-7b14-91d1-f349ddac5174",
+        "name": "sodium chloride 0.9 % in 1000 ML Injection",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": "06/09/2022",
+        "end_date": "06/10/2022",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "completed"
+      },
+      {
+        "medication_id": "0198ec2d-bf17-788c-9275-e79fcb6b0990",
+        "name": "sertraline HCl 50 MG Oral Tablet",
+        "dosage": "Unknown dosage",
+        "frequency": "Not Specified",
+        "start_date": null,
+        "end_date": "06/21/2025",
+        "prescribing_physician": null,
+        "indication": null,
+        "status": "active"
+      }
+    ],
+    "procedures": [
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83df11523fa2",
+        "name": "Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e04edff601",
+        "name": "Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e1776c0a80",
+        "name": "Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e2565e1ea0",
+        "name": "Lipid panel This panel must include the following: Cholesterol, serum, total (82465) Lipoprotein, direct measurement, high density cholesterol (HDL cholesterol) (83718) Triglycerides (84478)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e3fb2dae00",
+        "name": "Creatine kinase (CK), (CPK); total",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e4fcb8ec1e",
+        "name": "Cyanocobalamin (Vitamin B-12)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e5b26c83d5",
+        "name": "Hemoglobin; glycosylated (A1C)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e64483bfbe",
+        "name": "Magnesium",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e71c5e04bd",
+        "name": "Magnesium",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e805c17475",
+        "name": "Phosphorus inorganic (phosphate)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83e9f09a2292",
+        "name": "Phosphorus inorganic (phosphate)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83ea4c6b64e5",
+        "name": "Thyroid stimulating hormone (TSH)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83eb8686ffa3",
+        "name": "Electroencephalogram (EEG); including recording awake and drowsy",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83ece2fc4c94",
+        "name": "Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83ed7c45b873",
+        "name": "Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83eec418ed46",
+        "name": "Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83efdbc101cf",
+        "name": "Prothrombin time",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83f0ccce9485",
+        "name": "Syphilis test, non-treponemal antibody; qualitative (eg, VDRL, RPR, ART)",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      },
+      {
+        "procedure_id": "0198ec2d-b61f-790e-b043-83f10d84f32b",
+        "name": "Prolactin",
+        "date": "unknown",
+        "provider": "Unknown provider",
+        "location": null,
+        "indication": null,
+        "outcome": null,
+        "complications": null,
+        "cpt_code": null
+      }
+    ],
+    "diagnoses": [
+      {
+        "diagnosis_id": "0198ec2d-b6ce-71d2-b4be-7b5c814614d2",
+        "condition": "Other specified counseling",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83d1d2b6119b",
+        "condition": "Unspecified convulsions",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83d2715219ce",
+        "condition": "Epilepsy, unspecified, not intractable, with status epilepticus",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83d35821a7d6",
+        "condition": "Intentional self-harm by knife, initial encounter",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83d43e479284",
+        "condition": "Acute respiratory failure with hypoxia",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83d5db40b7a8",
+        "condition": "Encephalopathy, unspecified",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83d692a98807",
+        "condition": "Conversion disorder with seizures or convulsions",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83d9dbed729b",
+        "condition": "Major depressive disorder, recurrent severe without psychotic features",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83da4371a0ef",
+        "condition": "Generalized anxiety disorder",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83db21e779f1",
+        "condition": "Dissociative and conversion disorder, unspecified",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-b61f-790e-b043-83dc5983b47b",
+        "condition": "Unknown condition",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-a9eb-7ee8-b292-4c3acd8b5ea4",
+        "condition": "Encounter for follow-up examination after completed treatment for conditions other than malignant neoplasm",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-a9eb-7ee8-b292-4c3b4e240229",
+        "condition": "Conversion disorder with seizures or convulsions",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-a9eb-7ee8-b292-4c3cfd6b38b4",
+        "condition": "Intentional self-harm by knife, subsequent encounter",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      },
+      {
+        "diagnosis_id": "0198ec2d-a9eb-7ee8-b292-4c3d3513098e",
+        "condition": "Major depressive disorder, recurrent severe without psychotic features",
+        "date_diagnosed": "unknown",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "diagnosing_physician": null,
+        "notes": null
+      }
+    ],
+    "raw_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ClinicalDocument xmlns=\"urn:hl7-org:v3\" xmlns:sdtc=\"urn:hl7-org:sdtc\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" moodCode=\"EVN\"><realmCode code=\"US\"></realmCode><typeId root=\"2.16.840.1.113883.1.3\" extension=\"POCD_HD000040\"></typeId><templateId root=\"2.16.840.1.113883.10.20.22.1.1\" extension=\"2015-08-01\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.1.9\" extension=\"2015-08-01\"></templateId><id root=\"2.16.840.1.113883.3.9621\" assigningAuthorityName=\"METRIPORT\"></id><code code=\"34133-9\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Summarization of Episode Note\"></code><title>Continuity of Care Document</title><effectiveTime value=\"20250829041030\"></effectiveTime><confidentialityCode code=\"N\" codeSystem=\"2.16.840.1.113883.5.25\" displayName=\"Normal\"></confidentialityCode><languageCode code=\"en-US\"></languageCode><setId root=\"2.16.840.1.113883.3.9621\" assigningAuthorityName=\"METRIPORT\"></setId><versionNumber value=\"3\"></versionNumber><recordTarget><patientRole><id nullFlavor=\"UNK\"></id><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><patient><name><given>Jane</given><family>Smith</family></name><administrativeGenderCode code=\"F\" codeSystem=\"2.16.840.1.113883.5.1\" codeSystemName=\"AdministrativeGender\"></administrativeGenderCode><birthTime value=\"20060221\"></birthTime><maritalStatusCode codeSystem=\"2.16.840.1.113883.5.2\" codeSystemName=\"MaritalStatusCode\"></maritalStatusCode><raceCode nullFlavor=\"UNK\"></raceCode><ethnicGroupCode nullFlavor=\"UNK\"></ethnicGroupCode></patient></patientRole></recordTarget><author><time value=\"20250829041030\"></time><assignedAuthor><id root=\"0198ec2d-b6ce-71d2-b4be-7b76ab17da60\"></id><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><telecom use=\"WP\" value=\"555-555-5555\"></telecom><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedAuthoringDevice><manufacturerModelName>METRIPORT</manufacturerModelName><softwareName>METRIPORT</softwareName></assignedAuthoringDevice><representedOrganization><id root=\"1234\" extension=\"FMJ596RG5ZSA9ZXW\"></id><id root=\"1234\" extension=\"6UQKFAM7NFI5OYBA\"></id><id root=\"1234\" extension=\"JQMQWYQ05HFD8R34\"></id><id root=\"1234\" extension=\"8CSH3PUV91IIHSMP\"></id><id root=\"1234\" extension=\"4IRNO86JE49SN5XW\"></id><name>Trojan Health</name><telecom use=\"WP\" value=\"555-555-5555\"></telecom><telecom use=\"WP\" value=\"555-555-5555\"></telecom><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedAuthor></author><custodian><assignedCustodian><representedCustodianOrganization><id nullFlavor=\"UNK\"></id><name>Metriport</name><telecom use=\"WP\" value=\"+1-615-344-9551\"></telecom><addr><streetAddressLine>2261 Market St, #4818</streetAddressLine><city>San Francisco</city><state>CA</state><postalCode>94114</postalCode><country>US</country></addr></representedCustodianOrganization></assignedCustodian></custodian><component><structuredBody><component><section><templateId root=\"2.16.840.1.113883.10.20.22.2.17\"></templateId><code code=\"29762-2\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Social history Narrative\"></code><title>SOCIAL HISTORY</title><text><table ID=\"socialhistory1\"><thead><tr><th>Question / Observation</th><th>Answer / Status</th><th>Score</th><th>Date Recorded</th></tr></thead><tbody><tr ID=\"socialhistory1-pair1\"><td>Smokeless tobacco status</td><td>Smokeless tobacco non-user (finding)</td><td>N/A</td><td>Unknown</td></tr><tr ID=\"socialhistory2-pair1\"><td>History of Alcohol use</td><td>Lifetime non-drinker (finding)</td><td>N/A</td><td>Unknown</td></tr><tr ID=\"socialhistory3-pair1\"><td>unknown</td><td>Possible pregnancy (situation)</td><td>N/A</td><td>Unknown</td></tr><tr ID=\"socialhistory4-pair1\"><td>Tobacco smoking status</td><td>Tobacco smoking consumption unknown (finding)</td><td>N/A</td><td>Unknown</td></tr><tr ID=\"socialhistory5-pair1\"><td>Sex</td><td>Female (finding)</td><td>N/A</td><td>Unknown</td></tr><tr ID=\"socialhistory6-pair1\"><td>Exposure to severe acute respiratory syndrome coronavirus 2 (event)</td><td>Not sure</td><td>N/A</td><td>Unknown</td></tr></tbody></table></text><entry><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.38\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.38\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b60e8b55705\"></id><code code=\"88031-0\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Smokeless tobacco status\"></code><text><reference value=\"#socialhistory1\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime nullFlavor=\"UNK\"></effectiveTime></observation></entry><entry><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.38\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.38\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b61f766dc63\"></id><code code=\"11331-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"History of Alcohol use\"></code><text><reference value=\"#socialhistory2\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime nullFlavor=\"UNK\"></effectiveTime></observation></entry><entry><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.38\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.38\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b6ee5f4e785\"></id><code code=\"ASSERTION\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><text><reference value=\"#socialhistory3\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime nullFlavor=\"UNK\"></effectiveTime></observation></entry><entry><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.38\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.38\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2e-0b28-7f59-8820-a496327ce113\"></id><code code=\"72166-2\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Tobacco smoking status\"></code><text><reference value=\"#socialhistory4\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime nullFlavor=\"UNK\"></effectiveTime></observation></entry><entry><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.38\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.38\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c8c1-74f7-9bd5-9852deabb2ca\"></id><code code=\"46098-0\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Sex\"></code><text><reference value=\"#socialhistory5\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime nullFlavor=\"UNK\"></effectiveTime></observation></entry><entry><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.38\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.38\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c8c1-74f7-9bd5-9855a22799bc\"></id><code code=\"840546002\" codeSystem=\"2.16.840.1.113883.6.96\" displayName=\"Exposure to severe acute respiratory syndrome coronavirus 2 (event)\"></code><text><reference value=\"#socialhistory6\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime nullFlavor=\"UNK\"></effectiveTime></observation></entry></section></component><component><section><templateId root=\"2.16.840.1.113883.10.20.22.2.56\"></templateId><code code=\"10190-7\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Mental status Narrative\"></code><title>MENTAL STATUS</title><text><paragraph>Not on file</paragraph></text></section></component><component><section><templateId root=\"2.16.840.1.113883.10.20.22.2.1.1\"></templateId><code code=\"10160-0\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"History of Medication use Narrative\"></code><title>MEDICATIONS</title><text><table ID=\"medications\"><thead><tr><th>Medication</th><th>Code</th><th>Code System</th><th>Dosage</th><th>Frequency</th><th>Start Date</th><th>End Date</th><th>Reason</th></tr></thead><tbody><tr ID=\"medications1\"><td>sertraline HCl 50 MG Oral Tablet</td><td>312941</td><td>2.16.840.1.113883.6.88</td><td>25 mg</td><td>Not Specified</td><td>05/19/2025 9:13 PM</td><td>05/25/2025 9:26 PM</td><td>Not Specified</td></tr><tr ID=\"medications2\"><td>HYDROcodone bitartrate 5 MG / acetaminophen 325 MG Oral Tablet</td><td>857002</td><td>2.16.840.1.113883.6.88</td><td>1 {tbl}</td><td>Not Specified</td><td>05/30/2023 7:40 PM</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"medications3\"><td>omeprazole 20 MG Delayed Release Oral Capsule</td><td>198051</td><td>2.16.840.1.113883.6.88</td><td>20 mg</td><td>Not Specified</td><td>Not Specified</td><td>06/21/2025 12:00 AM</td><td>Not Specified</td></tr><tr ID=\"medications4\"><td>ketorolac tromethamine 15 MG in 1 ML Cartridge</td><td>1665675</td><td>2.16.840.1.113883.6.88</td><td>15 mg</td><td>Not Specified</td><td>04/26/2025 9:30 AM</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"medications5\"><td>omeprazole 20 MG Delayed Release Oral Tablet</td><td>402014</td><td>2.16.840.1.113883.6.88</td><td>20 mg</td><td>Not Specified</td><td>Not Specified</td><td>06/21/2025 12:00 AM</td><td>Not Specified</td></tr><tr ID=\"medications6\"><td>FLUoxetine 20 MG Oral Tablet (PMDD)</td><td>2532163</td><td>2.16.840.1.113883.6.88</td><td>Not Specified</td><td>Not Specified</td><td>08/28/2022 12:00 AM</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"medications7\"><td>omeprazole 20 MG Delayed Release Oral Capsule</td><td>198051</td><td>2.16.840.1.113883.6.88</td><td>Not Specified</td><td>Not Specified</td><td>08/12/2022 12:00 AM</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"medications8\"><td>sodium chloride 0.9 % in 1000 ML Injection</td><td>1807639</td><td>2.16.840.1.113883.6.88</td><td>1000 mL</td><td>Not Specified</td><td>09/04/2022 2:05 AM</td><td>09/04/2022 4:07 AM</td><td>Not Specified</td></tr><tr ID=\"medications9\"><td>levETIRAcetam 500 MG in 5 ML Injection</td><td>647121</td><td>2.16.840.1.113883.6.88</td><td>1000 mg</td><td>Not Specified</td><td>09/04/2022 2:05 AM</td><td>09/04/2022 2:22 AM</td><td>Not Specified</td></tr><tr ID=\"medications10\"><td>midazolam 5 MG in 5 ML Injection</td><td>1666800</td><td>2.16.840.1.113883.6.88</td><td>Not Specified</td><td>Not Specified</td><td>09/04/2022 2:04 AM</td><td>09/04/2022 2:06 AM</td><td>Not Specified</td></tr><tr ID=\"medications11\"><td>midazolam 5 MG in 5 ML Injection</td><td>1666800</td><td>2.16.840.1.113883.6.88</td><td>5 mg</td><td>Not Specified</td><td>09/04/2022 2:05 AM</td><td>09/04/2022 2:06 AM</td><td>Not Specified</td></tr><tr ID=\"medications12\"><td>dexAMETHasone sodium phosphate 10 MG in 1 ML Injection</td><td>1812079</td><td>2.16.840.1.113883.6.88</td><td>10 mg</td><td>Not Specified</td><td>09/04/2022 1:40 AM</td><td>09/04/2022 1:47 AM</td><td>Not Specified</td></tr><tr ID=\"medications13\"><td>amoxicillin 875 MG / clavulanate potassium 125 MG Oral Tablet</td><td>562508</td><td>2.16.840.1.113883.6.88</td><td>1 {tbl}</td><td>Not Specified</td><td>07/15/2022 2:20 AM</td><td>07/15/2022 2:24 AM</td><td>Not Specified</td></tr><tr ID=\"medications14\"><td>cephalexin 250 MG Oral Capsule</td><td>309112</td><td>2.16.840.1.113883.6.88</td><td>500 mg</td><td>Not Specified</td><td>06/09/2022 11:40 PM</td><td>06/09/2022 11:57 PM</td><td>Not Specified</td></tr><tr ID=\"medications15\"><td>ondansetron 4 MG in 2 ML Injection</td><td>1740467</td><td>2.16.840.1.113883.6.88</td><td>4 mg</td><td>Not Specified</td><td>06/09/2022 11:40 PM</td><td>06/09/2022 11:53 PM</td><td>Not Specified</td></tr><tr ID=\"medications16\"><td>sodium chloride 0.9 % in 1000 ML Injection</td><td>1807639</td><td>2.16.840.1.113883.6.88</td><td>1000 mL</td><td>Not Specified</td><td>06/09/2022 11:10 PM</td><td>06/10/2022 12:35 AM</td><td>Not Specified</td></tr><tr ID=\"medications17\"><td>sertraline HCl 50 MG Oral Tablet</td><td>312941</td><td>2.16.840.1.113883.6.88</td><td>50 mg</td><td>Not Specified</td><td>Not Specified</td><td>06/21/2025 12:00 AM</td><td>Not Specified</td></tr></tbody></table></text><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-b523-7c14-9cde-13a95ec49c8a\"></id><statusCode code=\"stopped\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20250519211300\"></low><high value=\"20250525212600\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"312941\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"sertraline HCl 50 MG Oral Tablet\"><originalText><reference value=\"medications1\"></reference></originalText><translation code=\"65862-012-01\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"sertraline hydrochloride (Sertraline Hydrochloride) 50 mg/1 Oral Tablet, Film Coated, 100 TABLET, FILM COATED in 1 BOTTLE (65862-012-01)\"></translation><translation code=\"59762-4900-1\" codeSystem=\"http://hl7.org/fhir/sid/ndc\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-bbba-7dfe-b2d7-33a44eb94d5d\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20230530194000\"></low></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"857002\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"HYDROcodone bitartrate 5 MG / acetaminophen 325 MG Oral Tablet\"><originalText><reference value=\"medications2\"></reference></originalText><translation code=\"53746-109-01\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"hydrocodone bitartrate and acetaminophen (Hydrocodone Bitartrate And Acetaminophen) 325; 5 mg/1; mg/1 Oral Tablet, 100 TABLET in 1 BOTTLE (53746-109-01)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6e0-7acb-b15b-347bc69204bb\"></id><statusCode code=\"active\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><high value=\"20250621000000\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"198051\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"omeprazole 20 MG Delayed Release Oral Capsule\"><originalText><reference value=\"medications3\"></reference></originalText><translation code=\"62175-118-32\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"omeprazole (Omeprazole) 20 mg/1 Oral Capsule, Delayed Release, 30 CAPSULE, DELAYED RELEASE in 1 BOTTLE (62175-118-32)\"></translation><translation code=\"60505-0065-2\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"omeprazole (Omeprazole) 20 mg/1 Oral Capsule, Delayed Release, 100 CAPSULE, DELAYED RELEASE in 1 BOTTLE (60505-0065-2)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2e-0a29-7748-9f36-9eacb342e3ee\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20250426093000\"></low></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"1665675\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"ketorolac tromethamine 15 MG in 1 ML Cartridge\"><originalText><reference value=\"medications4\"></reference></originalText><translation code=\"63323-161-01\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"ketorolac tromethamine (Ketorolac Tromethamine) 15 mg/mL Intramuscular; Intravenous Injection, Solution, 25 VIAL, SINGLE-USE in 1 TRAY (63323-161-01)  / 1 mL in 1 VIAL, SINGLE-USE (63323-161-00)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-bf98-7815-b5a9-5e9936c2d439\"></id><statusCode code=\"active\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><high value=\"20250621000000\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"402014\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"omeprazole 20 MG Delayed Release Oral Tablet\"><originalText><reference value=\"medications5\"></reference></originalText><translation code=\"0536-1322-13\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"omeprazole (Acid Reducer) 20 mg/1 Oral Tablet, Delayed Release, 3 BOTTLE in 1 CARTON (0536-1322-13)  / 14 TABLET, DELAYED RELEASE in 1 BOTTLE\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-bf98-7815-b5a9-5e9ac95cf21f\"></id><statusCode code=\"active\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220828000000\"></low></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"2532163\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"FLUoxetine 20 MG Oral Tablet (PMDD)\"><originalText><reference value=\"medications6\"></reference></originalText><translation code=\"0378-0735-01\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"fluoxetine 20 MG Oral Tablet\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-bf98-7815-b5a9-5e9bafa62d8d\"></id><statusCode code=\"active\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220812000000\"></low></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"198051\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"omeprazole 20 MG Delayed Release Oral Capsule\"><originalText><reference value=\"medications7\"></reference></originalText><translation code=\"62175-118-32\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"omeprazole (Omeprazole) 20 mg/1 Oral Capsule, Delayed Release, 30 CAPSULE, DELAYED RELEASE in 1 BOTTLE (62175-118-32)\"></translation><translation code=\"60505-0065-2\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"omeprazole (Omeprazole) 20 mg/1 Oral Capsule, Delayed Release, 100 CAPSULE, DELAYED RELEASE in 1 BOTTLE (60505-0065-2)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c6c3-76c8-8531-c432c23a3eb4\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220904020500\"></low><high value=\"20220904040700\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"1807639\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"sodium chloride 0.9 % in 1000 ML Injection\"><originalText><reference value=\"medications8\"></reference></originalText><translation code=\"0264-1800-31\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"sodium chloride (Sodium Chloride) 9 mg/mL Intravenous Injection, Solution, 84 CONTAINER in 1 CASE (0264-1800-31)  / 50 mL in 1 CONTAINER\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c6c3-76c8-8531-c4337b59d318\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220904020500\"></low><high value=\"20220904022200\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"647121\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"levETIRAcetam 500 MG in 5 ML Injection\"><originalText><reference value=\"medications9\"></reference></originalText><translation code=\"62756-513-44\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"5 ML levetiracetam 100 MG/ML Injection\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c6c3-76c8-8531-c43409908a12\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220904020411\"></low><high value=\"20220904020600\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"1666800\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"midazolam 5 MG in 5 ML Injection\"><originalText><reference value=\"medications10\"></reference></originalText><translation code=\"63323-411-10\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"midazolam hydrochloride (Midazolam) 1 mg/mL Intramuscular; Intravenous Injection, Solution, 10 VIAL in 1 TRAY (63323-411-10)  / 10 mL in 1 VIAL (63323-411-13)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c6c3-76c8-8531-c435792ffeca\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220904020500\"></low><high value=\"20220904020600\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"1666800\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"midazolam 5 MG in 5 ML Injection\"><originalText><reference value=\"medications11\"></reference></originalText><translation code=\"63323-411-10\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"midazolam hydrochloride (Midazolam) 1 mg/mL Intramuscular; Intravenous Injection, Solution, 10 VIAL in 1 TRAY (63323-411-10)  / 10 mL in 1 VIAL (63323-411-13)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c6c3-76c8-8531-c43690a81524\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220904014000\"></low><high value=\"20220904014700\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"1812079\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"dexAMETHasone sodium phosphate 10 MG in 1 ML Injection\"><originalText><reference value=\"medications12\"></reference></originalText><translation code=\"0641-0367-25\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"dexamethasone sodium phosphate (Dexamethasone Sodium Phosphate) 10 mg/mL Intramuscular; Intravenous Injection, 25 VIAL in 1 CARTON (0641-0367-25)  / 1 mL in 1 VIAL (0641-0367-21)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c6ea-7c92-ac5d-ccd6bbf906f8\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220715022000\"></low><high value=\"20220715022400\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"562508\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"amoxicillin 875 MG / clavulanate potassium 125 MG Oral Tablet\"><originalText><reference value=\"medications13\"></reference></originalText><translation code=\"0093-2275-34\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"amoxicillin and clavulanate potassium (Amoxicillin And Clavulanate Potassium) 875; 125 mg/1; mg/1 Oral Tablet, Film Coated, 20 TABLET, FILM COATED in 1 BOTTLE (0093-2275-34)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-93e3-7b14-91d1-f346ef2e7f2e\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220609234000\"></low><high value=\"20220609235700\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"309112\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"cephalexin 250 MG Oral Capsule\"><originalText><reference value=\"medications14\"></reference></originalText><translation code=\"0093-3145-01\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"cephalexin (Cephalexin) 250 mg/1 Oral Capsule, 100 CAPSULE in 1 BOTTLE (0093-3145-01)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-93e3-7b14-91d1-f347ab7818cd\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220609234000\"></low><high value=\"20220609235300\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"1740467\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"ondansetron 4 MG in 2 ML Injection\"><originalText><reference value=\"medications15\"></reference></originalText><translation code=\"63323-373-02\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"ondansetron hydrochloride (Ondansetron) 2 mg/mL Intramuscular; Intravenous Injection, 25 VIAL in 1 TRAY (63323-373-02)  / 2 mL in 1 VIAL (63323-373-00)\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-93e3-7b14-91d1-f349ddac5174\"></id><statusCode code=\"completed\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><low value=\"20220609231000\"></low><high value=\"20220610003500\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"1807639\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"sodium chloride 0.9 % in 1000 ML Injection\"><originalText><reference value=\"medications16\"></reference></originalText><translation code=\"0264-1800-31\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"sodium chloride (Sodium Chloride) 9 mg/mL Intravenous Injection, Solution, 84 CONTAINER in 1 CASE (0264-1800-31)  / 50 mL in 1 CONTAINER\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><entry><substanceAdministration classCode=\"SBADM\" moodCode=\"INT\"><templateId root=\"2.16.840.1.113883.10.20.22.4.16\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.16\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-bf17-788c-9275-e79fcb6b0990\"></id><statusCode code=\"active\"></statusCode><effectiveTime xsi:type=\"IVL_TS\"><high value=\"20250621000000\"></high></effectiveTime><doseQuantity nullFlavor=\"UNK\"></doseQuantity><consumable typeCode=\"CSM\"><manufacturedProduct classCode=\"MANU\"><templateId root=\"2.16.840.1.113883.10.20.22.4.23\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.23\" extension=\"2014-06-09\"></templateId><manufacturedMaterial><code code=\"312941\" codeSystem=\"2.16.840.1.113883.6.88\" displayName=\"sertraline HCl 50 MG Oral Tablet\"><originalText><reference value=\"medications17\"></reference></originalText><translation code=\"65862-012-01\" codeSystem=\"http://hl7.org/fhir/sid/ndc\" displayName=\"sertraline hydrochloride (Sertraline Hydrochloride) 50 mg/1 Oral Tablet, Film Coated, 100 TABLET, FILM COATED in 1 BOTTLE (65862-012-01)\"></translation><translation code=\"59762-4900-1\" codeSystem=\"http://hl7.org/fhir/sid/ndc\"></translation></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry></section></component><component><section><templateId root=\"2.16.840.1.113883.10.20.22.2.5.1\" extension=\"2015-08-01\"></templateId><code code=\"11450-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Problem list - Reported\"></code><title>PROBLEMS</title><text><table ID=\"problems\"><thead><tr><th>ICD Code</th><th>Diagnosis</th><th>Provider Response</th><th>Status</th><th>Treatment Plan</th><th>Comments</th></tr></thead><tbody><tr ID=\"problems1\"><td>Z71.89</td><td>Other specified counseling</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems2\"><td>R56.9</td><td>Unspecified convulsions</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems3\"><td>G40.901</td><td>Epilepsy, unspecified, not intractable, with status epilepticus</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems4\"><td>X78.1XXA</td><td>Intentional self-harm by knife, initial encounter</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems5\"><td>J96.01</td><td>Acute respiratory failure with hypoxia</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems6\"><td>G93.40</td><td>Encephalopathy, unspecified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems7\"><td>F44.5</td><td>Conversion disorder with seizures or convulsions</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems8\"><td>F33.2</td><td>Major depressive disorder, recurrent severe without psychotic features</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems9\"><td>F41.1</td><td>Generalized anxiety disorder</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems10\"><td>F44.9</td><td>Dissociative and conversion disorder, unspecified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems11\"><td>1741</td><td>Major Depressive Disorder</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems12\"><td>Z09</td><td>Encounter for follow-up examination after completed treatment for conditions other than malignant neoplasm</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems13\"><td>F44.5</td><td>Conversion disorder with seizures or convulsions</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems14\"><td>X78.1XXD</td><td>Intentional self-harm by knife, subsequent encounter</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr><tr ID=\"problems15\"><td>F33.2</td><td>Major depressive disorder, recurrent severe without psychotic features</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td><td>Not Specified</td></tr></tbody></table></text><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b5c814614d2\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b5c814614d2\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"Z71.89\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Other specified counseling\"><originalText><reference value=\"problems1\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d1d2b6119b\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d1d2b6119b\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"R56.9\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Unspecified convulsions\"><originalText><reference value=\"problems2\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d2715219ce\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d2715219ce\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"G40.901\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Epilepsy, unspecified, not intractable, with status epilepticus\"><originalText><reference value=\"problems3\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d35821a7d6\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d35821a7d6\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"X78.1XXA\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Intentional self-harm by knife, initial encounter\"><originalText><reference value=\"problems4\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d43e479284\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d43e479284\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"J96.01\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Acute respiratory failure with hypoxia\"><originalText><reference value=\"problems5\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d5db40b7a8\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d5db40b7a8\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"G93.40\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Encephalopathy, unspecified\"><originalText><reference value=\"problems6\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d692a98807\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d692a98807\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"F44.5\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Conversion disorder with seizures or convulsions\"><originalText><reference value=\"problems7\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d9dbed729b\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83d9dbed729b\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"F33.2\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Major depressive disorder, recurrent severe without psychotic features\"><originalText><reference value=\"problems8\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83da4371a0ef\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83da4371a0ef\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"F41.1\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Generalized anxiety disorder\"><originalText><reference value=\"problems9\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83db21e779f1\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83db21e779f1\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"F44.9\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Dissociative and conversion disorder, unspecified\"><originalText><reference value=\"problems10\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83dc5983b47b\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83dc5983b47b\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"1741\" codeSystem=\"1.2.840.114350.1.13.292.2.7.2.776777\"><originalText><reference value=\"problems11\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3acd8b5ea4\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3acd8b5ea4\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"Z09\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Encounter for follow-up examination after completed treatment for conditions other than malignant neoplasm\"><originalText><reference value=\"problems12\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3b4e240229\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3b4e240229\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"F44.5\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Conversion disorder with seizures or convulsions\"><originalText><reference value=\"problems13\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3cfd6b38b4\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3cfd6b38b4\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"X78.1XXD\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Intentional self-harm by knife, subsequent encounter\"><originalText><reference value=\"problems14\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.3\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.3\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3d3513098e\"></id><code code=\"CONC\" codeSystem=\"2.16.840.1.113883.5.6\" displayName=\"Concern\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><entryRelationship typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.4\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.4\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-a9eb-7ee8-b292-4c3d3513098e\"></id><code code=\"64572001\" codeSystem=\"2.16.840.1.113883.6.96\" codeSystemName=\"SNOMED CT\"><translation code=\"75323-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" code=\"F33.2\" codeSystem=\"http://hl7.org/fhir/sid/icd-10-cm\" displayName=\"Major depressive disorder, recurrent severe without psychotic features\"><originalText><reference value=\"problems15\"></reference></originalText></value><entryRelationship typeCode=\"REFR\"><observation classCode=\"OBS\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.6\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.6\" extension=\"2019-06-20\"></templateId><code code=\"33999-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low></effectiveTime><value xsi:type=\"CD\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></value></observation></entryRelationship></observation></entryRelationship></act></entry></section></component><component><section nullFlavor=\"NI\"><templateId root=\"2.16.840.1.113883.10.20.22.2.6.1\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.2.6.1\" extension=\"2014-06-09\"></templateId><code code=\"48765-2\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Allergies and Adverse Reactions\"></code><title>ALLERGIES, ADVERSE REACTIONS, ALERTS</title><text><paragraph>Not on file</paragraph></text></section></component><component><section><templateId root=\"2.16.840.1.113883.10.20.22.2.22\" extension=\"2015-08-01\"></templateId><code code=\"46240-8\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"History of encounters\"></code><title>ENCOUNTERS</title><text><table ID=\"encounters\"><thead><tr><th>Reason for Visit</th><th>Encounter Type</th><th>Attending Provider</th><th>Location</th><th>Date</th></tr></thead><tbody><tr ID=\"encounters1\"><td>Not Specified</td><td>Office or other outpatient visit for the evaluation and management of a new patient, which requires a medically appropriate history and/or examination and low level of medical decision making. When using total time on the date of the encounter for code selection, 30 minutes must be met or exceeded.</td><td>Koepp, Dillon</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/29/2025 5:00 PM</td></tr><tr ID=\"encounters2\"><td>Not Specified</td><td>Plan of Care Documentation</td><td>Not Specified</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/22/2025 12:00 AM</td></tr><tr ID=\"encounters3\"><td>Not Specified</td><td>Hospital Encounter</td><td>Not Specified</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/20/2025 2:14 AM</td></tr><tr ID=\"encounters4\"><td>Not Specified</td><td>Hospital Encounter</td><td>Not Specified</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/19/2025 9:13 PM</td></tr><tr ID=\"encounters5\"><td>Not Specified</td><td>Emergency</td><td>Not Specified</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/19/2025 6:10 AM</td></tr><tr ID=\"encounters6\"><td>Not Specified</td><td>Travel</td><td>Not Specified</td><td>Not Specified</td><td>05/19/2025 12:00 AM</td></tr><tr ID=\"encounters7\"><td>Not Specified</td><td>Emergency</td><td>Heaney, Barney</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/11/2025 3:36 AM</td></tr><tr ID=\"encounters8\"><td>Not Specified</td><td>Travel</td><td>Not Specified</td><td>Not Specified</td><td>05/10/2025 12:00 AM</td></tr><tr ID=\"encounters9\"><td>Not Specified</td><td>Emergency</td><td>Rempel, Myrtle</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>04/26/2025 6:24 AM</td></tr><tr ID=\"encounters10\"><td>Not Specified</td><td>Travel</td><td>Not Specified</td><td>Not Specified</td><td>04/26/2025 12:00 AM</td></tr><tr ID=\"encounters11\"><td>Annual Exam</td><td>Office or other outpatient visit for the evaluation and management of an established patient, which requires a medically appropriate history and/or examination and low level of medical decision making. When using total time on the date of the encounter for code selection, 20 minutes must be met or exceeded., Office or other outpatient visit for the evaluation and management of an established patient, which requires a medically appropriate history and/or examination and low level of medical decision making. When using total time on the date of the encounter for code selection, 20 minutes must be met or exceeded.</td><td>Koepp, Dillon</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>06/16/2025 2:00 PM</td></tr><tr ID=\"encounters12\"><td>Not Specified</td><td>Ambulatory, Travel</td><td>Not Specified</td><td>Not Specified</td><td>05/10/2025 12:00 AM</td></tr><tr ID=\"encounters13\"><td>Not Specified</td><td>Inpatient Encounter, Hospital Encounter</td><td>Goodwin, Jeanie</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/19/2025 9:13 PM</td></tr><tr ID=\"encounters14\"><td>Behavioral Problem, Seizures Prior Hx Of</td><td>Emergency, Emergency</td><td>Heaney, Barney</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/19/2025 6:10 AM</td></tr><tr ID=\"encounters15\"><td>Seizures Re-evaluation</td><td>Emergency, Emergency</td><td>Heaney, Barney</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/11/2025 3:36 AM</td></tr><tr ID=\"encounters16\"><td>Not Specified</td><td>Ambulatory, Travel</td><td>Not Specified</td><td>Not Specified</td><td>04/26/2025 12:00 AM</td></tr><tr ID=\"encounters17\"><td>[D]ABDOMINAL PAIN</td><td>Emergency, Emergency</td><td>Not Specified</td><td>Trojan Health - 123 DustyDepot Ave, Springfield, Oregon 00000</td><td>05/30/2023 6:48 PM</td></tr></tbody></table></text><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c07ebb123c12\"></id><code code=\"99203\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"unknown\"><translation code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250529170000\"></low><high value=\"20250529175654\"></high></effectiveTime><performer><assignedEntity><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b572575de9b\"></id><code code=\"363AM0700X\" codeSystem=\"2.16.840.1.113883.6.101\" displayName=\"Family Medicine Physician Assistant\"><originalText>Family Medicine</originalText><translation code=\"19\" codeSystem=\"1.2.840.114350.1.72.1.7.7.10.688867.4160\" displayName=\"Family Medicine\"></translation><translation code=\"9\" codeSystem=\"1.2.840.114350.1.13.292.2.7.10.836982.1050\" displayName=\"Family Medicine\"></translation></code><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedPerson><name><given>Dillon, Dillon, Dillon</given><family>Koepp, Koepp, Koepp</family></name></assignedPerson><representedOrganization classCode=\"ORG\"><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedEntity></performer><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b5e59c81770\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c07fa72d1714\"></id><code code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250522000000\"></low><high value=\"20250522000000\"></high></effectiveTime><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-de1e-7ea7-bf55-0b1627c10158\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c080fc80c84c\"></id><code code=\"IMP\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250520021400\"></low><high value=\"20250523004400\"></high></effectiveTime><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83dd177d52df\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c08102861acb\"></id><code code=\"IMP\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250519211300\"></low><high value=\"20250525212600\"></high></effectiveTime><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-de1e-7ea7-bf55-0b1627c10158\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c082d8ec0025\"></id><code code=\"EMER\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250519061000\"></low><high value=\"20250519205700\"></high></effectiveTime><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9d8-73b5-bf1b-0bd813ece01f\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c083e40d596a\"></id><code code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250519000000\"></low><high value=\"20250519000000\"></high></effectiveTime><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c084ce9f51f6\"></id><code code=\"EMER\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250511033600\"></low><high value=\"20250511070900\"></high></effectiveTime><performer><assignedEntity><id root=\"1234\" extension=\"0198ec2d-c9d7-732c-b22f-1d4b86c94693\"></id><code code=\"207P00000X\" codeSystem=\"2.16.840.1.113883.6.101\" displayName=\"Emergency Medicine Physician\"><originalText>Emergency Medicine</originalText><translation code=\"49\" codeSystem=\"1.2.840.114350.1.13.292.2.7.10.836982.1050\" displayName=\"Emergency Medicine\"></translation></code><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedPerson><name><given>Barney, Barney</given><family>Heaney, Heaney</family></name></assignedPerson><representedOrganization classCode=\"ORG\"><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedEntity></performer><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9d8-73b5-bf1b-0bd813ece01f\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c0851b4edb6b\"></id><code code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250510000000\"></low><high value=\"20250510000000\"></high></effectiveTime><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c086bebc5e49\"></id><code code=\"EMER\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250426062400\"></low><high value=\"20250426105100\"></high></effectiveTime><performer><assignedEntity><id root=\"1234\" extension=\"0198ec2d-c9d7-732c-b22f-1d4fe4c652f3\"></id><code code=\"207P00000X\" codeSystem=\"2.16.840.1.113883.6.101\" displayName=\"Emergency Medicine Physician\"><originalText>Emergency Medicine</originalText><translation code=\"49\" codeSystem=\"1.2.840.114350.1.13.292.2.7.10.836982.1050\" displayName=\"Emergency Medicine\"></translation></code><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedPerson><name><given>Myrtle, Myrtle, Myrtle</given><family>Rempel, Rempel, Rempel</family></name></assignedPerson><representedOrganization classCode=\"ORG\"><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedEntity></performer><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9d8-73b5-bf1b-0bd813ece01f\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9da-7038-b481-c087922b27fd\"></id><code code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250426000000\"></low><high value=\"20250426000000\"></high></effectiveTime><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c754-7fc7-bdd7-2fe14b547fb1\"></id><code code=\"99213\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"unknown\"><translation code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"Ambulatory\"></translation><translation code=\"101\" codeSystem=\"1.2.840.114350.1.72.1.30\" displayName=\"Office Visit\"></translation><translation code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250616140000\"></low><high value=\"20250616144628\"></high></effectiveTime><performer><assignedEntity><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b572575de9b\"></id><code code=\"363AM0700X\" codeSystem=\"2.16.840.1.113883.6.101\" displayName=\"Family Medicine Physician Assistant\"><originalText>Family Medicine</originalText><translation code=\"19\" codeSystem=\"1.2.840.114350.1.72.1.7.7.10.688867.4160\" displayName=\"Family Medicine\"></translation><translation code=\"9\" codeSystem=\"1.2.840.114350.1.13.292.2.7.10.836982.1050\" displayName=\"Family Medicine\"></translation></code><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedPerson><name><given>Dillon, Dillon, Dillon</given><family>Koepp, Koepp, Koepp</family></name></assignedPerson><representedOrganization classCode=\"ORG\"><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedEntity></performer><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b5e59c81770\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code><value xsi:type=\"CD\"><originalText><reference value=\"encounters11\"></reference></originalText></value></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b705-7983-8499-6fe4c69d1a5a\"></id><code code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"><translation code=\"214\" codeSystem=\"1.2.840.114350.1.72.1.30\" displayName=\"Travel\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250510000000\"></low><high value=\"20250510000000\"></high></effectiveTime><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b523-7c14-9cde-140c84174c78\"></id><code code=\"IMP\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"><translation code=\"3\" codeSystem=\"1.2.840.114350.1.72.1.30\" displayName=\"Hospital Encounter\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250519211300\"></low><high value=\"20250525212600\"></high></effectiveTime><performer><assignedEntity><id root=\"1234\" extension=\"0198ec2d-b523-7c14-9cde-134a380b472f\"></id><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedPerson><name><given>Jeanie</given><family>Goodwin</family></name></assignedPerson><representedOrganization classCode=\"ORG\"><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedEntity></performer><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-de1e-7ea7-bf55-0b1627c10158\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-9e60-7100-9932-feb148379730\"></id><code code=\"EMER\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"><translation code=\"3\" codeSystem=\"1.2.840.114350.1.72.1.30\" displayName=\"Hospital Encounter\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250519061000\"></low><high value=\"20250519205700\"></high></effectiveTime><performer><assignedEntity><id root=\"1234\" extension=\"0198ec2d-c9d7-732c-b22f-1d4b86c94693\"></id><code code=\"207P00000X\" codeSystem=\"2.16.840.1.113883.6.101\" displayName=\"Emergency Medicine Physician\"><originalText>Emergency Medicine</originalText><translation code=\"49\" codeSystem=\"1.2.840.114350.1.13.292.2.7.10.836982.1050\" displayName=\"Emergency Medicine\"></translation></code><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedPerson><name><given>Barney, Barney</given><family>Heaney, Heaney</family></name></assignedPerson><representedOrganization classCode=\"ORG\"><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedEntity></performer><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9d8-73b5-bf1b-0bd813ece01f\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code><value xsi:type=\"CD\"><originalText><reference value=\"encounters14\"></reference></originalText></value><value xsi:type=\"CD\"><originalText><reference value=\"encounters14\"></reference></originalText></value></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-ec58-7e0a-9f28-404364afba4c\"></id><code code=\"EMER\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"><translation code=\"3\" codeSystem=\"1.2.840.114350.1.72.1.30\" displayName=\"Hospital Encounter\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250511033600\"></low><high value=\"20250511070900\"></high></effectiveTime><performer><assignedEntity><id root=\"1234\" extension=\"0198ec2d-c9d7-732c-b22f-1d4b86c94693\"></id><code code=\"207P00000X\" codeSystem=\"2.16.840.1.113883.6.101\" displayName=\"Emergency Medicine Physician\"><originalText>Emergency Medicine</originalText><translation code=\"49\" codeSystem=\"1.2.840.114350.1.13.292.2.7.10.836982.1050\" displayName=\"Emergency Medicine\"></translation></code><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><telecom use=\"WP\" value=\"555-555-5555\"></telecom><assignedPerson><name><given>Barney, Barney</given><family>Heaney, Heaney</family></name></assignedPerson><representedOrganization classCode=\"ORG\"><telecom use=\"WP\" value=\"555-555-5555\"></telecom><addr use=\"H\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr></representedOrganization></assignedEntity></performer><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9d8-73b5-bf1b-0bd813ece01f\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code><value xsi:type=\"CD\"><originalText><reference value=\"encounters15\"></reference></originalText></value></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-c00c-718f-b61d-ca75fe612f00\"></id><code code=\"AMB\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"><translation code=\"214\" codeSystem=\"1.2.840.114350.1.72.1.30\" displayName=\"Travel\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20250426000000\"></low><high value=\"20250426000000\"></high></effectiveTime><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code></observation></entryRelationship></act></entryRelationship></encounter></entry><entry><encounter classCode=\"ENC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.49\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.49\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-bbba-7dfe-b2d7-340f5f448fee\"></id><code code=\"EMER\" codeSystem=\"2.16.840.1.113883.5.4\" displayName=\"unknown\"><translation code=\"3\" codeSystem=\"1.2.840.114350.1.72.1.30\" displayName=\"Hospital Encounter\"></translation></code><statusCode code=\"completed\"></statusCode><effectiveTime><low value=\"20230530184800\"></low><high value=\"20230530232600\"></high></effectiveTime><participant typeCode=\"LOC\"><participantRole classCode=\"SDLOC\"><templateId root=\"2.16.840.1.113883.10.20.22.4.32\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.32\" extension=\"2014-06-09\"></templateId><id root=\"1234\" extension=\"0198ec2d-c9d8-73b5-bf1b-0bd813ece01f\"></id><code nullFlavor=\"NI\"></code><addr use=\"WP\"><streetAddressLine>123 DustyDepot Ave</streetAddressLine><city>Springfield</city><state>Oregon</state><postalCode>00000</postalCode><country>US</country></addr><playingEntity classCode=\"PLC\"><name>Trojan Health</name></playingEntity></participantRole></participant><entryRelationship typeCode=\"SUBJ\"><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.80\"></templateId><code code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Encounter Diagnosis\"></code><entryRelationship inversionInd=\"false\" typeCode=\"SUBJ\"><observation classCode=\"OBS\" moodCode=\"EVN\"><code code=\"282291009\" codeSystem=\"2.16.840.1.113883.3.88.12.3221.7.2\" codeSystemName=\"SNOMED CT\" displayName=\"Diagnosis\"><translation code=\"29308-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Diagnosis\"></translation></code><value xsi:type=\"CD\" code=\"207205003\" codeSystem=\"2.16.840.1.113883.6.96\" displayName=\"[D]ABDOMINAL PAIN\"><originalText><reference value=\"encounters17\"></reference></originalText></value></observation></entryRelationship></act></entryRelationship></encounter></entry></section></component><component><section nullFlavor=\"NI\"><templateId root=\"2.16.840.1.113883.10.20.22.2.2.1\"></templateId><code code=\"11369-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"History of immunizations\"></code><title>IMMUNIZATIONS</title><text><paragraph>Not on file</paragraph></text></section></component><component><section nullFlavor=\"NI\"><templateId root=\"2.16.840.1.113883.10.20.22.2.4.1\"></templateId><code code=\"8716-3\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Vital Signs\"></code><title>VITAL SIGNS</title><text><paragraph>Not on file</paragraph></text></section></component><component><section><templateId root=\"2.16.840.1.113883.10.20.22.2.15\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.2.15\" extension=\"2015-08-01\"></templateId><code code=\"10157-6\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Family History\"></code><title>FAMILY HISTORY</title><text><paragraph>Not on file</paragraph></text></section></component><component><section><templateId root=\"2.16.840.1.113883.10.20.22.2.7\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.2.7\" extension=\"2015-08-01\"></templateId><code code=\"47519-4\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"History of Procedures Document\"></code><title>PROCEDURES</title><text><table ID=\"procedures\"><thead><tr><th>Procedure</th><th>ICD Code</th><th>Associated Diagnosis</th><th>Date/Time</th><th>Comments</th></tr></thead><tbody><tr ID=\"procedures1\"><td>Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)</td><td>80048</td><td>Not Specified</td><td>05/21/2025 9:01 AM</td><td>Not Specified</td></tr><tr ID=\"procedures2\"><td>Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)</td><td>80048</td><td>Not Specified</td><td>05/22/2025 6:37 AM</td><td>Not Specified</td></tr><tr ID=\"procedures3\"><td>Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)</td><td>80048</td><td>Not Specified</td><td>05/23/2025 1:25 AM</td><td>Not Specified</td></tr><tr ID=\"procedures4\"><td>Lipid panel This panel must include the following: Cholesterol, serum, total (82465) Lipoprotein, direct measurement, high density cholesterol (HDL cholesterol) (83718) Triglycerides (84478)</td><td>80061</td><td>Not Specified</td><td>05/20/2025 8:39 AM</td><td>Not Specified</td></tr><tr ID=\"procedures5\"><td>Creatine kinase (CK), (CPK); total</td><td>82550</td><td>Not Specified</td><td>05/21/2025 4:42 PM</td><td>Not Specified</td></tr><tr ID=\"procedures6\"><td>Cyanocobalamin (Vitamin B-12)</td><td>82607</td><td>Not Specified</td><td>05/20/2025 8:39 AM</td><td>Not Specified</td></tr><tr ID=\"procedures7\"><td>Hemoglobin; glycosylated (A1C)</td><td>83036</td><td>Not Specified</td><td>05/20/2025 8:39 AM</td><td>Not Specified</td></tr><tr ID=\"procedures8\"><td>Magnesium</td><td>83735</td><td>Not Specified</td><td>05/22/2025 6:37 AM</td><td>Not Specified</td></tr><tr ID=\"procedures9\"><td>Magnesium</td><td>83735</td><td>Not Specified</td><td>05/23/2025 1:25 AM</td><td>Not Specified</td></tr><tr ID=\"procedures10\"><td>Phosphorus inorganic (phosphate)</td><td>84100</td><td>Not Specified</td><td>05/22/2025 6:37 AM</td><td>Not Specified</td></tr><tr ID=\"procedures11\"><td>Phosphorus inorganic (phosphate)</td><td>84100</td><td>Not Specified</td><td>05/23/2025 1:25 AM</td><td>Not Specified</td></tr><tr ID=\"procedures12\"><td>Thyroid stimulating hormone (TSH)</td><td>84443</td><td>Not Specified</td><td>05/20/2025 8:39 AM</td><td>Not Specified</td></tr><tr ID=\"procedures13\"><td>Electroencephalogram (EEG); including recording awake and drowsy</td><td>95816</td><td>Not Specified</td><td>05/22/2025 6:29 PM</td><td>Not Specified</td></tr><tr ID=\"procedures14\"><td>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</td><td>85027</td><td>Not Specified</td><td>05/21/2025 7:27 AM</td><td>Not Specified</td></tr><tr ID=\"procedures15\"><td>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</td><td>85027</td><td>Not Specified</td><td>05/22/2025 6:37 AM</td><td>Not Specified</td></tr><tr ID=\"procedures16\"><td>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</td><td>85027</td><td>Not Specified</td><td>05/23/2025 1:25 AM</td><td>Not Specified</td></tr><tr ID=\"procedures17\"><td>Prothrombin time</td><td>85610</td><td>Not Specified</td><td>05/20/2025 11:34 PM</td><td>Not Specified</td></tr><tr ID=\"procedures18\"><td>Syphilis test, non-treponemal antibody; qualitative (eg, VDRL, RPR, ART)</td><td>86592</td><td>Not Specified</td><td>05/20/2025 8:39 AM</td><td>Not Specified</td></tr><tr ID=\"procedures19\"><td>Prolactin</td><td>84146</td><td>Not Specified</td><td>05/20/2025 11:40 AM</td><td>Not Specified</td></tr></tbody></table></text><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83df11523fa2\"></id><code code=\"80048\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)\"><originalText>Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)</originalText></code><text><reference value=\"#procedures1\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e04edff601\"></id><code code=\"80048\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)\"><originalText>Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)</originalText></code><text><reference value=\"#procedures2\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e1776c0a80\"></id><code code=\"80048\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)\"><originalText>Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520)</originalText></code><text><reference value=\"#procedures3\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e2565e1ea0\"></id><code code=\"80061\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Lipid panel This panel must include the following: Cholesterol, serum, total (82465) Lipoprotein, direct measurement, high density cholesterol (HDL cholesterol) (83718) Triglycerides (84478)\"><originalText>Lipid panel This panel must include the following: Cholesterol, serum, total (82465) Lipoprotein, direct measurement, high density cholesterol (HDL cholesterol) (83718) Triglycerides (84478)</originalText><translation code=\"24331-1\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"Lipid 1996 panel - Serum or Plasma\"></translation></code><text><reference value=\"#procedures4\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e3fb2dae00\"></id><code code=\"82550\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Creatine kinase (CK), (CPK); total\"><originalText>Creatine kinase (CK), (CPK); total</originalText></code><text><reference value=\"#procedures5\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e4fcb8ec1e\"></id><code code=\"82607\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Cyanocobalamin (Vitamin B-12)\"><originalText>Cyanocobalamin (Vitamin B-12)</originalText></code><text><reference value=\"#procedures6\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e5b26c83d5\"></id><code code=\"83036\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Hemoglobin; glycosylated (A1C)\"><originalText>Hemoglobin; glycosylated (A1C)</originalText><translation code=\"4548-4\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"Hemoglobin A1c/Hemoglobin.total in Blood\"></translation></code><text><reference value=\"#procedures7\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e64483bfbe\"></id><code code=\"83735\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Magnesium\"><originalText>Magnesium</originalText></code><text><reference value=\"#procedures8\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e71c5e04bd\"></id><code code=\"83735\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Magnesium\"><originalText>Magnesium</originalText></code><text><reference value=\"#procedures9\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e805c17475\"></id><code code=\"84100\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Phosphorus inorganic (phosphate)\"><originalText>Phosphorus inorganic (phosphate)</originalText></code><text><reference value=\"#procedures10\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83e9f09a2292\"></id><code code=\"84100\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Phosphorus inorganic (phosphate)\"><originalText>Phosphorus inorganic (phosphate)</originalText></code><text><reference value=\"#procedures11\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83ea4c6b64e5\"></id><code code=\"84443\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Thyroid stimulating hormone (TSH)\"><originalText>Thyroid stimulating hormone (TSH)</originalText></code><text><reference value=\"#procedures12\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83eb8686ffa3\"></id><code code=\"95816\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Electroencephalogram (EEG); including recording awake and drowsy\"><originalText>Electroencephalogram (EEG); including recording awake and drowsy</originalText><translation code=\"11523-8\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"EEG study\"></translation></code><text><reference value=\"#procedures13\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83ece2fc4c94\"></id><code code=\"85027\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)\"><originalText>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</originalText></code><text><reference value=\"#procedures14\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83ed7c45b873\"></id><code code=\"85027\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)\"><originalText>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</originalText></code><text><reference value=\"#procedures15\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83eec418ed46\"></id><code code=\"85027\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)\"><originalText>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</originalText></code><text><reference value=\"#procedures16\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83efdbc101cf\"></id><code code=\"85610\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Prothrombin time\"><originalText>Prothrombin time</originalText></code><text><reference value=\"#procedures17\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83f0ccce9485\"></id><code code=\"86592\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Syphilis test, non-treponemal antibody; qualitative (eg, VDRL, RPR, ART)\"><originalText>Syphilis test, non-treponemal antibody; qualitative (eg, VDRL, RPR, ART)</originalText></code><text><reference value=\"#procedures18\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry><entry><procedure classCode=\"PROC\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.14\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.14\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b61f-790e-b043-83f10d84f32b\"></id><code code=\"84146\" codeSystem=\"2.16.840.1.113883.6.12\" displayName=\"Prolactin\"><originalText>Prolactin</originalText></code><text><reference value=\"#procedures19\"></reference></text><statusCode code=\"completed\"></statusCode><effectiveTime><low nullFlavor=\"UNK\"></low><high nullFlavor=\"UNK\"></high></effectiveTime></procedure></entry></section></component><component><section nullFlavor=\"NI\"><templateId root=\"2.16.840.1.113883.10.20.22.2.9\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.2.9\" extension=\"2014-06-09\"></templateId><code code=\"51847-2\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Assessment and Plan\"></code><title>ASSESSMENT AND PLAN</title><text><paragraph>Not on file</paragraph></text></section></component><component><section><code code=\"10164-2\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"History of Present Illness\"></code><title>Progress Notes</title><text><content ID=\"progress_notes1\"><br/>    Attempted to contact the patient today regarding a recent hospital visit.<br/>Unable to reach the patient to schedule the recommended follow-up appointments.<br/>MyChart message sent. no<br/>Left message on voice mail including callback number.<br/>Hello Jane Smith, this is Maria, RN, BSN from Trojan Health. I tried reaching you to check in on your progress after your recent visit, but I was unable to get in touch. Please give us a call back at 555-555-5555 at your earliest convenience. Unfortunately, you cannot respond to this message at this time. Thank you!<br/>      Formatting of this note might be different from the original.<br/> </content></text><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.202\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.202\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-b6ce-71d2-b4be-7b5bd993e06c\"></id><code code=\"34109-9\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"Note\"><originalText>Note</originalText><translation code=\"11506-3\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"Progress note\"></translation><translation code=\"1\" codeSystem=\"1.2.840.114350.1.72.727879.69848980\" displayName=\"Progress Notes\"></translation><translation code=\"1\" codeSystem=\"1.2.840.114350.1.13.292.2.7.4.737880.5010\" displayName=\"Progress Notes\"></translation></code><text><reference value=\"#progress_notes1\"></reference></text><statusCode code=\"completed\"></statusCode></act></entry></section></component><component><section><code code=\"34109-9\" codeSystem=\"2.16.840.1.113883.6.1\" codeSystemName=\"LOINC\" displayName=\"Note\"></code><title>Miscellaneous Notes</title><text><content ID=\"miscellaneous_notes1\"><br/>    Patient Needs: 20yo female IVC from home with family and hx of depression. Superficially cut her L arm and neck with a knife. Pseudoseizures up to 6-7x a day. Currently in ICU on LOA.<br/>Care Recommendations: Pt will be free of SI. Pt will demonstrate an alleviation of depressive sxs and that depressive sxs do not impair daily functioning. Pt will complete a written safety plan. Pt will demonstrate an improved stability and identify 3 ways to maintain stable mood and behavior for 3 consecutive days. Pt will cooperate with tx and be compliant with med regime. Pt will be monitored for medication tolerance and compliance. Pt will eat at least 50% of meals and sleep at least 6hrs nightly. Attend groups daily and build coping skills. Fall risk safety will be monitored daily. Pt will receive education and support. Pt will review plan of care initially and weekly.<br/>Care Plan Reviewed: yes<br/>Patient/Family Goals: Sw will complete PSA with pt while in ICU and collateral from family.<br/>Discharge Disposition Goals: Home<br/>Progressing as Anticipated: no<br/>Barriers to Goals: ICU for medical monitoring and on LOA.<br/>Other Goal Discussion: Start d/c planning soon.<br/>Electronically Signed:<br/>Maria L Zoid, Trojan Health</content></text><entry><act classCode=\"ACT\" moodCode=\"EVN\"><templateId root=\"2.16.840.1.113883.10.20.22.4.202\"></templateId><templateId root=\"2.16.840.1.113883.10.20.22.4.202\" extension=\"2015-08-01\"></templateId><id root=\"1234\" extension=\"0198ec2d-de1e-7ea7-bf55-0b15113a5a5f\"></id><code code=\"34109-9\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"Note\"><originalText>Note</originalText><translation code=\"28628-6\" codeSystem=\"2.16.840.1.113883.6.1\" displayName=\"Psychiatry Note\"></translation><translation code=\"93\" codeSystem=\"1.2.840.114350.1.72.727879.69848980\" displayName=\"BH Treatment Plan\"></translation><translation code=\"1000033\" codeSystem=\"1.2.840.114350.1.13.292.2.7.4.737880.5010\" displayName=\"BH Treatment Plan Note\"></translation></code><text><reference value=\"#miscellaneous_notes1\"></reference></text><statusCode code=\"completed\"></statusCode></act></entry></section></component></structuredBody></component></ClinicalDocument>",
+    "extraction_timestamp": "2025-11-25 09:17:46.028040"
+  },
+  "medical_summary": {
+    "patient_id": "MRN-9621",
+    "summary_text": "Jane Smith is a, age 19 Female patient with a medical history significant for Acute Respiratory Failure With Hypoxia, Major Depressive Disorder, Recurrent Severe Without Psychotic Features, and Encounter For Follow-Up Examination After Completed Treatment For Conditions Other Than Malignant Neoplasm.\n\nCurrent medications include omeprazole 20 MG Delayed Release Oral Capsule Unknown dosage, omeprazole 20 MG Delayed Release Oral Tablet Unknown dosage, FLUoxetine 20 MG Oral Tablet (PMDD) Unknown dosage, omeprazole 20 MG Delayed Release Oral Capsule Unknown dosage, and sertraline HCl 50 MG Oral Tablet Unknown dosage.\n\nRecent significant medical events include diagnosis of Other specified counseling, diagnosis of Unspecified convulsions, and diagnosis of Epilepsy, unspecified, not intractable, with status epilepticus.\n\nChronic condition management focuses on Depression management.",
+    "key_conditions": [
+      {
+        "name": "Acute Respiratory Failure With Hypoxia",
+        "icd_10_code": null,
+        "severity": "high",
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Major Depressive Disorder, Recurrent Severe Without Psychotic Features",
+        "icd_10_code": null,
+        "severity": "high",
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Encounter For Follow-Up Examination After Completed Treatment For Conditions Other Than Malignant Neoplasm",
+        "icd_10_code": null,
+        "severity": "high",
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Depression",
+        "icd_10_code": null,
+        "severity": "moderate",
+        "status": "managed",
+        "first_diagnosed": "05/19/2025",
+        "last_updated": "05/19/2025",
+        "confidence_score": 0.6
+      },
+      {
+        "name": "Other Specified Counseling",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Unspecified Convulsions",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Epilepsy, Unspecified, Not Intractable, With Status Epilepticus",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Intentional Self-Harm By Knife, Initial Encounter",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Encephalopathy, Unspecified",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Conversion Disorder With Seizures Or Convulsions",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Generalized Anxiety Disorder",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Dissociative And Conversion Disorder, Unspecified",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Intentional Self-Harm By Knife, Subsequent Encounter",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "GERD",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "active",
+        "first_diagnosed": "08/12/2022",
+        "last_updated": "08/12/2022",
+        "confidence_score": 0.6
+      }
+    ],
+    "medication_summary": "Currently taking 5 medications: omeprazole 20 MG Delayed Release Oral Capsule Unknown dosage, omeprazole 20 MG Delayed Release Oral Tablet Unknown dosage, FLUoxetine 20 MG Oral Tablet (PMDD) Unknown dosage, omeprazole 20 MG Delayed Release Oral Capsule Unknown dosage, sertraline HCl 50 MG Oral Tablet Unknown dosage. Previously prescribed 12 medications that are no longer active.",
+    "procedure_summary": "Medical procedures include 19 documented procedures: 12 general procedures, most recent: Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520) (unknown); 6 imaging procedures, most recent: Lipid panel This panel must include the following: Cholesterol, serum, total (82465) Lipoprotein, direct measurement, high density cholesterol (HDL cholesterol) (83718) Triglycerides (84478) (unknown); Syphilis test, non-treponemal antibody; qualitative (eg, VDRL, RPR, ART) (unknown).",
+    "chronological_events": [
+      {
+        "date": "05/19/2025",
+        "event_type": "medication_start",
+        "description": "Started sertraline HCl 50 MG Oral Tablet Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "04/26/2025",
+        "event_type": "medication_start",
+        "description": "Started ketorolac tromethamine 15 MG in 1 ML Cartridge Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "05/30/2023",
+        "event_type": "medication_start",
+        "description": "Started HYDROcodone bitartrate 5 MG / acetaminophen 325 MG Oral Tablet Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "09/04/2022",
+        "event_type": "medication_start",
+        "description": "Started sodium chloride 0.9 % in 1000 ML Injection Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "09/04/2022",
+        "event_type": "medication_start",
+        "description": "Started levETIRAcetam 500 MG in 5 ML Injection Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "09/04/2022",
+        "event_type": "medication_start",
+        "description": "Started midazolam 5 MG in 5 ML Injection Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "09/04/2022",
+        "event_type": "medication_start",
+        "description": "Started midazolam 5 MG in 5 ML Injection Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "09/04/2022",
+        "event_type": "medication_start",
+        "description": "Started dexAMETHasone sodium phosphate 10 MG in 1 ML Injection Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "08/28/2022",
+        "event_type": "medication_start",
+        "description": "Started FLUoxetine 20 MG Oral Tablet (PMDD) Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "08/12/2022",
+        "event_type": "medication_start",
+        "description": "Started omeprazole 20 MG Delayed Release Oral Capsule Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "07/15/2022",
+        "event_type": "medication_start",
+        "description": "Started amoxicillin 875 MG / clavulanate potassium 125 MG Oral Tablet Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "06/09/2022",
+        "event_type": "medication_start",
+        "description": "Started cephalexin 250 MG Oral Capsule Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "06/09/2022",
+        "event_type": "medication_start",
+        "description": "Started ondansetron 4 MG in 2 ML Injection Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "06/09/2022",
+        "event_type": "medication_start",
+        "description": "Started sodium chloride 0.9 % in 1000 ML Injection Unknown dosage Not Specified",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Other specified counseling",
+        "significance": "high",
+        "related_conditions": [
+          "Other specified counseling"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Unspecified convulsions",
+        "significance": "high",
+        "related_conditions": [
+          "Unspecified convulsions"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Epilepsy, unspecified, not intractable, with status epilepticus",
+        "significance": "high",
+        "related_conditions": [
+          "Epilepsy, unspecified, not intractable, with status epilepticus"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Intentional self-harm by knife, initial encounter",
+        "significance": "high",
+        "related_conditions": [
+          "Intentional self-harm by knife, initial encounter"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Acute respiratory failure with hypoxia",
+        "significance": "high",
+        "related_conditions": [
+          "Acute respiratory failure with hypoxia"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Encephalopathy, unspecified",
+        "significance": "high",
+        "related_conditions": [
+          "Encephalopathy, unspecified"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Conversion disorder with seizures or convulsions",
+        "significance": "high",
+        "related_conditions": [
+          "Conversion disorder with seizures or convulsions"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Major depressive disorder, recurrent severe without psychotic features",
+        "significance": "high",
+        "related_conditions": [
+          "Major depressive disorder, recurrent severe without psychotic features"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Generalized anxiety disorder",
+        "significance": "high",
+        "related_conditions": [
+          "Generalized anxiety disorder"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Dissociative and conversion disorder, unspecified",
+        "significance": "high",
+        "related_conditions": [
+          "Dissociative and conversion disorder, unspecified"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Unknown condition",
+        "significance": "high",
+        "related_conditions": [
+          "Unknown condition"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Encounter for follow-up examination after completed treatment for conditions other than malignant neoplasm",
+        "significance": "high",
+        "related_conditions": [
+          "Encounter for follow-up examination after completed treatment for conditions other than malignant neoplasm"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Conversion disorder with seizures or convulsions",
+        "significance": "high",
+        "related_conditions": [
+          "Conversion disorder with seizures or convulsions"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Intentional self-harm by knife, subsequent encounter",
+        "significance": "high",
+        "related_conditions": [
+          "Intentional self-harm by knife, subsequent encounter"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "diagnosis",
+        "description": "Diagnosed with Major depressive disorder, recurrent severe without psychotic features",
+        "significance": "high",
+        "related_conditions": [
+          "Major depressive disorder, recurrent severe without psychotic features"
+        ]
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Basic metabolic panel (Calcium, total) This panel must include the following: Calcium, total (82310) Carbon dioxide (bicarbonate) (82374) Chloride (82435) Creatinine (82565) Glucose (82947) Potassium (84132) Sodium (84295) Urea nitrogen (BUN) (84520) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Lipid panel This panel must include the following: Cholesterol, serum, total (82465) Lipoprotein, direct measurement, high density cholesterol (HDL cholesterol) (83718) Triglycerides (84478) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Creatine kinase (CK), (CPK); total performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Cyanocobalamin (Vitamin B-12) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Hemoglobin; glycosylated (A1C) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Magnesium performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Magnesium performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Phosphorus inorganic (phosphate) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Phosphorus inorganic (phosphate) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Thyroid stimulating hormone (TSH) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Electroencephalogram (EEG); including recording awake and drowsy performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count) performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Prothrombin time performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Syphilis test, non-treponemal antibody; qualitative (eg, VDRL, RPR, ART) performed by Unknown provider",
+        "significance": "medium",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "procedure",
+        "description": "Prolactin performed by Unknown provider",
+        "significance": "high",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      },
+      {
+        "date": "unknown",
+        "event_type": "unknown",
+        "description": "Medical encounter: unknown",
+        "significance": "low",
+        "related_conditions": []
+      }
+    ],
+    "generated_timestamp": "2025-11-25 09:17:46.041082",
+    "data_quality_score": 0.78125,
+    "missing_data_indicators": [
+      "15 diagnoses missing dates"
+    ]
+  },
+  "research_analysis": {
+    "patient_id": "MRN-9621",
+    "analysis_timestamp": "2025-11-25 09:17:46.047714",
+    "conditions_analyzed": [
+      {
+        "name": "Depression",
+        "icd_10_code": null,
+        "severity": "moderate",
+        "status": "managed",
+        "first_diagnosed": "05/19/2025",
+        "last_updated": "05/19/2025",
+        "confidence_score": 0.6
+      },
+      {
+        "name": "Acute Respiratory Failure With Hypoxia",
+        "icd_10_code": null,
+        "severity": "high",
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Major Depressive Disorder, Recurrent Severe Without Psychotic Features",
+        "icd_10_code": null,
+        "severity": "high",
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Encounter For Follow-Up Examination After Completed Treatment For Conditions Other Than Malignant Neoplasm",
+        "icd_10_code": null,
+        "severity": "high",
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Other Specified Counseling",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Unspecified Convulsions",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Epilepsy, Unspecified, Not Intractable, With Status Epilepticus",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Intentional Self-Harm By Knife, Initial Encounter",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Encephalopathy, Unspecified",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      },
+      {
+        "name": "Conversion Disorder With Seizures Or Convulsions",
+        "icd_10_code": null,
+        "severity": null,
+        "status": "completed",
+        "first_diagnosed": "unknown",
+        "last_updated": "unknown",
+        "confidence_score": 1.0
+      }
+    ],
+    "research_findings": [],
+    "condition_research_correlations": {
+      "Depression": [],
+      "Acute Respiratory Failure With Hypoxia": [],
+      "Major Depressive Disorder, Recurrent Severe Without Psychotic Features": [],
+      "Encounter For Follow-Up Examination After Completed Treatment For Conditions Other Than Malignant Neoplasm": [],
+      "Other Specified Counseling": [],
+      "Unspecified Convulsions": [],
+      "Epilepsy, Unspecified, Not Intractable, With Status Epilepticus": [],
+      "Intentional Self-Harm By Knife, Initial Encounter": [],
+      "Encephalopathy, Unspecified": [],
+      "Conversion Disorder With Seizures Or Convulsions": []
+    },
+    "categorized_findings": {},
+    "research_insights": [
+      "Research coverage: 0/10 conditions (0.0%) have relevant research literature available.",
+      "Study quality: 0/0 papers are high-quality studies (systematic reviews, RCTs, or meta-analyses).",
+      "Recent research: 0/0 papers published within the last 5 years, indicating current evidence availability.",
+      "Research gaps identified for: Depression, Acute Respiratory Failure With Hypoxia, Major Depressive Disorder, Recurrent Severe Without Psychotic Features. Consider consulting specialist literature or clinical guidelines."
+    ],
+    "clinical_recommendations": [
+      "Consult current clinical guidelines for conditions with limited research literature: Depression, Acute Respiratory Failure With Hypoxia."
+    ],
+    "analysis_confidence": 0.0,
+    "total_papers_reviewed": 0,
+    "relevant_papers_found": 0
+  },
+  "generated_timestamp": "2025-11-25 09:17:46.049794",
+  "report_id": "RPT_20251125_091746_ee7f7fef",
+  "processing_time_seconds": 3.5e-05,
+  "agent_versions": {
+    "xml_parser": "1.0",
+    "medical_summarizer": "1.0",
+    "research_correlator": "1.0",
+    "report_generator": "1.0"
+  },
+  "quality_metrics": {
+    "data_completeness_score": 1.0,
+    "medical_summary_quality": {
+      "conditions_identified": 14,
+      "data_quality_score": 0.78125,
+      "missing_data_indicators": 1,
+      "summary_length": 888
+    },
+    "research_analysis_quality": {
+      "papers_found": 0,
+      "analysis_confidence": 0.0,
+      "conditions_with_research": 0,
+      "high_quality_papers": 0,
+      "recent_papers": 0
+    },
+    "overall_quality_score": 0.6125,
+    "quality_assessment": "Good quality analysis with adequate data"
+  }
+}
