@@ -479,4 +479,53 @@ class EnhancedCLI:
         print(f"{CLIColors.BOLD}Thank you for using the Medical Record Analysis System!{CLIColors.ENDC}")
         print(f"{CLIColors.OKBLUE}{'='*60}{CLIColors.ENDC}")
         print(f"{CLIColors.OKCYAN}All analysis results have been securely stored and logged.{CLIColors.ENDC}")
+    
+    def display_bedrock_results(self, results: Dict[str, Any]):
+        """Display Bedrock Claude AI analysis results with enhanced formatting."""
+        print(f"\n{CLIColors.HEADER}{CLIColors.BOLD}{'='*80}{CLIColors.ENDC}")
+        print(f"{CLIColors.HEADER}{CLIColors.BOLD}🤖 BEDROCK CLAUDE AI ANALYSIS COMPLETE{CLIColors.ENDC}")
+        print(f"{CLIColors.HEADER}{CLIColors.BOLD}{'='*80}{CLIColors.ENDC}")
+        
+        # Patient information
+        print(f"\n{CLIColors.BOLD}📋 Patient Information{CLIColors.ENDC}")
+        print(f"{CLIColors.OKCYAN}{'─'*80}{CLIColors.ENDC}")
+        print(f"{CLIColors.BOLD}Name:{CLIColors.ENDC} {results.get('patient_name', 'Unknown')}")
+        print(f"{CLIColors.BOLD}ID:{CLIColors.ENDC} {results.get('patient_id', 'Unknown')}")
+        
+        # AI Model information
+        model_info = results.get('model_info', {})
+        print(f"\n{CLIColors.BOLD}🤖 AI Model Information{CLIColors.ENDC}")
+        print(f"{CLIColors.OKCYAN}{'─'*80}{CLIColors.ENDC}")
+        print(f"{CLIColors.BOLD}Model:{CLIColors.ENDC} {model_info.get('model_name', 'Claude')}")
+        print(f"{CLIColors.BOLD}Provider:{CLIColors.ENDC} {model_info.get('provider', 'Anthropic')}")
+        print(f"{CLIColors.BOLD}Region:{CLIColors.ENDC} {model_info.get('region', 'us-east-1')}")
+        print(f"{CLIColors.BOLD}Processing Time:{CLIColors.ENDC} {results.get('duration_seconds', 0):.2f} seconds")
+        
+        # Medical Summary from Claude
+        medical_summary = results.get('medical_summary', '')
+        if medical_summary:
+            print(f"\n{CLIColors.BOLD}🏥 MEDICAL SUMMARY (Claude AI){CLIColors.ENDC}")
+            print(f"{CLIColors.OKCYAN}{'─'*80}{CLIColors.ENDC}")
+            print(f"{CLIColors.OKBLUE}{medical_summary}{CLIColors.ENDC}")
+        
+        # Research Analysis from Claude
+        research_analysis = results.get('research_analysis', '')
+        if research_analysis:
+            print(f"\n{CLIColors.BOLD}🔬 RESEARCH-BASED ANALYSIS (Claude AI){CLIColors.ENDC}")
+            print(f"{CLIColors.OKCYAN}{'─'*80}{CLIColors.ENDC}")
+            print(f"{CLIColors.OKBLUE}{research_analysis}{CLIColors.ENDC}")
+        
+        # Report information
+        if results.get('s3_key'):
+            report_info = results.get('report', {})
+            print(f"\n{CLIColors.BOLD}📄 Report Information{CLIColors.ENDC}")
+            print(f"{CLIColors.OKCYAN}{'─'*80}{CLIColors.ENDC}")
+            print(f"{CLIColors.BOLD}Report ID:{CLIColors.ENDC} {report_info.get('report_id', 'Unknown')}")
+            print(f"{CLIColors.BOLD}S3 Location:{CLIColors.ENDC} {results['s3_key']}")
+            print(f"{CLIColors.BOLD}Workflow ID:{CLIColors.ENDC} {results.get('workflow_id', 'Unknown')}")
+            print(f"{CLIColors.BOLD}Generated At:{CLIColors.ENDC} {report_info.get('generated_at', 'Unknown')}")
+        
+        # Success message with AI branding
+        print(f"\n{CLIColors.OKGREEN}🤖 Claude AI analysis completed successfully!{CLIColors.ENDC}")
+        print(f"{CLIColors.OKCYAN}💡 This analysis was powered by AWS Bedrock and Anthropic Claude AI{CLIColors.ENDC}\n")
         print(f"{CLIColors.OKCYAN}Have a great day! 👋{CLIColors.ENDC}\n")

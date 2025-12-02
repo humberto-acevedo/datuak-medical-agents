@@ -136,16 +136,26 @@ async def run_prototype_test(use_bedrock: bool = False):
     
     try:
         if use_bedrock:
-            # Import Bedrock main
-            from src.main_bedrock import main as bedrock_main
+            # Import Bedrock components (not main, to avoid argument parsing conflict)
+            from src.main_bedrock import print_banner, analyze_patient
             
             print("📋 Bedrock components loaded successfully")
             print("🤖 Using AWS Bedrock Claude AI for analysis")
             print("🏥 Launching Medical Record Analysis System...")
             print()
             
-            # Run the Bedrock application (synchronous)
-            result = bedrock_main()
+            # Show banner
+            print_banner()
+            
+            # Get patient name interactively
+            patient_name = input("Enter patient name: ").strip()
+            
+            if not patient_name:
+                print("❌ Error: Patient name cannot be empty")
+                return 1
+            
+            # Run the Bedrock analysis (synchronous)
+            result = analyze_patient(patient_name, verbose=False)
             return result
         else:
             # Import original main components
