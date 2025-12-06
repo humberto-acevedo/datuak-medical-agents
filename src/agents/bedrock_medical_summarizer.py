@@ -56,6 +56,9 @@ class BedrockMedicalSummarizer:
             # Create system prompt for medical context
             system_prompt = self._create_system_prompt()
             
+            logger.info(f"Calling Bedrock Claude for medical summarization...")
+            logger.info(f"Prompt: {len(prompt)} chars, System: {len(system_prompt)} chars")
+            
             # Invoke Claude
             response = self.bedrock_client.invoke_with_retry(
                 prompt=prompt,
@@ -65,6 +68,10 @@ class BedrockMedicalSummarizer:
             
             # Parse response
             summary_text = response['text']
+            
+            logger.info(f"✓ Bedrock returned medical summary: {len(summary_text)} characters")
+            logger.info(f"  Model: {response.get('model_id')}")
+            logger.info(f"  Tokens: {response.get('usage', {})}")
             
             # Extract structured data from response
             structured_summary = self._parse_summary_response(summary_text, patient_data)

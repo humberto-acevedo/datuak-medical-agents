@@ -1,0 +1,6 @@
+{
+  "agent_id": "LAA6HDZPAH",
+  "agent_alias_id": "3SVECWUINK",
+  "lambda_arn": "arn:aws:lambda:us-east-1:539247495490:function:MedicalAnalysisMasterWorkflow",
+  "region": "us-east-1"
+}

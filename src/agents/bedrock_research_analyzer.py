@@ -58,6 +58,9 @@ class BedrockResearchAnalyzer:
             # Create system prompt for research context
             system_prompt = self._create_research_system_prompt()
             
+            logger.info(f"Calling Bedrock Claude for research analysis...")
+            logger.info(f"Prompt: {len(prompt)} chars, System: {len(system_prompt)} chars")
+            
             # Invoke Claude
             response = self.bedrock_client.invoke_with_retry(
                 prompt=prompt,
@@ -67,6 +70,10 @@ class BedrockResearchAnalyzer:
             
             # Parse response
             analysis_text = response['text']
+            
+            logger.info(f"✓ Bedrock returned research analysis: {len(analysis_text)} characters")
+            logger.info(f"  Model: {response.get('model_id')}")
+            logger.info(f"  Tokens: {response.get('usage', {})}")
             
             logger.info(f"Research analysis generated successfully for {patient_id}")
             

@@ -187,6 +187,7 @@ LOG_GROUPS=(
     "/aws/lambda/MedicalRecordXMLParser"
     "/aws/lambda/MedicalSummarization"
     "/aws/lambda/ResearchCorrelation"
+    "/aws/lambda/MasterWorkflowHandler"
 )
 
 for LOG_GROUP in "${LOG_GROUPS[@]}"; do
@@ -226,6 +227,7 @@ aws logs put-query-definition \
         "/aws/lambda/MedicalRecordXMLParser" \
         "/aws/lambda/MedicalSummarization" \
         "/aws/lambda/ResearchCorrelation" \
+        "/aws/lambda/MasterWorkflowHandler" \
     --region $REGION 2>/dev/null || true
 
 # Performance analysis query
@@ -238,6 +240,7 @@ aws logs put-query-definition \
         "/aws/lambda/MedicalRecordXMLParser" \
         "/aws/lambda/MedicalSummarization" \
         "/aws/lambda/ResearchCorrelation" \
+        "/aws/lambda/MasterWorkflowHandler" \
     --region $REGION 2>/dev/null || true
 
 # Patient processing query
@@ -252,6 +255,18 @@ aws logs put-query-definition \
         "/aws/lambda/MedicalRecordXMLParser" \
         "/aws/lambda/MedicalSummarization" \
         "/aws/lambda/ResearchCorrelation" \
+        "/aws/lambda/MasterWorkflowHandler" \
+    --region $REGION 2>/dev/null || true
+
+# Bedrock workflow query
+aws logs put-query-definition \
+    --name "MedicalRecord-BedrockWorkflow" \
+    --query-string "fields @timestamp, @message
+| filter @message like /Bedrock/ or @message like /workflow/
+| sort @timestamp desc
+| limit 100" \
+    --log-group-names \
+        "/aws/lambda/MasterWorkflowHandler" \
     --region $REGION 2>/dev/null || true
 
 echo -e "${GREEN}✓ CloudWatch Insights queries created${NC}"
@@ -282,7 +297,7 @@ echo "  ✓ CloudWatch Dashboard: MedicalRecordAnalysis-${ENVIRONMENT}"
 echo "  ✓ CloudWatch Alarms: $STACK_NAME"
 echo "  ✓ CloudTrail: $TRAIL_NAME"
 echo "  ✓ CloudWatch Logs Retention: 30 days"
-echo "  ✓ CloudWatch Insights Queries: 3 saved queries"
+echo "  ✓ CloudWatch Insights Queries: 4 saved queries"
 echo ""
 echo "View Dashboard:"
 echo "  https://console.aws.amazon.com/cloudwatch/home?region=$REGION#dashboards:name=MedicalRecordAnalysis-${ENVIRONMENT}"

@@ -19,7 +19,7 @@ class BedrockClient:
     CLAUDE_35_HAIKU = "anthropic.claude-3-haiku-20240307-v1:0"  # Use Claude 3 Haiku (already enabled)
     
     # Default cross-account role ARN
-    DEFAULT_CROSS_ACCOUNT_ROLE = "arn:aws:iam::279259282911:role/BedrockCrossAccountRole"
+    DEFAULT_CROSS_ACCOUNT_ROLE = "arn:aws:iam::539247495490:role/MemberCrossAccountRole"
     
     def __init__(self, region: str = "us-east-1", model_id: str = None):
         """
@@ -100,9 +100,13 @@ class BedrockClient:
             if system_prompt:
                 request_body["system"] = system_prompt
             
-            # Log request (without full prompt for brevity)
-            logger.info(f"Invoking Claude model: {self.model_id}")
-            logger.debug(f"Prompt length: {len(prompt)} characters")
+            # Log request
+            logger.info(f"=" * 60)
+            logger.info(f"BEDROCK MODEL CALL")
+            logger.info(f"Model: {self.model_id}")
+            logger.info(f"Prompt length: {len(prompt)} characters")
+            logger.info(f"Max tokens: {max_tokens}, Temperature: {temperature}")
+            logger.info(f"-" * 60)
             
             # Invoke model
             response = self.bedrock_runtime.invoke_model(
@@ -116,9 +120,13 @@ class BedrockClient:
             # Extract text from response
             response_text = response_body['content'][0]['text']
             
-            # Log response metadata
-            logger.info(f"Claude response received: {len(response_text)} characters")
-            logger.debug(f"Stop reason: {response_body.get('stop_reason')}")
+            # Log response
+            logger.info(f"BEDROCK MODEL RESPONSE")
+            logger.info(f"Response length: {len(response_text)} characters")
+            logger.info(f"Stop reason: {response_body.get('stop_reason')}")
+            logger.info(f"Input tokens: {response_body.get('usage', {}).get('input_tokens', 0)}")
+            logger.info(f"Output tokens: {response_body.get('usage', {}).get('output_tokens', 0)}")
+            logger.info(f"=" * 60)
             
             return {
                 'text': response_text,

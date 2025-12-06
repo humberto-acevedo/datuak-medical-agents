@@ -1,15 +1,17 @@
-"""Bedrock-based workflow orchestrator using Claude models."""
+"""Bedrock-based workflow orchestrator using Claude models or Bedrock Agents."""
 
 import logging
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from datetime import datetime
 import json
+import uuid
 
 from ..agents.xml_parser_agent import XMLParserAgent
 from ..agents.bedrock_medical_summarizer import BedrockMedicalSummarizer
 from ..agents.bedrock_research_analyzer import BedrockResearchAnalyzer
 from ..agents.s3_report_persister import S3ReportPersister
 from ..utils.bedrock_client import BedrockClient
+from ..utils.bedrock_agent_client import BedrockAgentClient
 from ..utils import AuditLogger
 from ..models import PatientData
 
@@ -17,13 +19,16 @@ logger = logging.getLogger(__name__)
 
 
 class BedrockWorkflow:
-    """Orchestrates medical analysis workflow using AWS Bedrock Claude models."""
+    """Orchestrates medical analysis workflow using AWS Bedrock Claude models or Bedrock Agents."""
     
     def __init__(self,
                  xml_parser_agent: XMLParserAgent = None,
                  bedrock_client: BedrockClient = None,
                  s3_persister: S3ReportPersister = None,
-                 audit_logger: AuditLogger = None):
+                 audit_logger: AuditLogger = None,
+                 use_bedrock_agent: bool = False,
+                 agent_id: Optional[str] = None,
+                 agent_alias_id: Optional[str] = None):
         """
         Initialize Bedrock workflow.
         
@@ -32,15 +37,25 @@ class BedrockWorkflow:
             bedrock_client: Bedrock client for Claude models
             s3_persister: Agent for persisting reports to S3
             audit_logger: Audit logger for HIPAA compliance
+            use_bedrock_agent: If True, use Bedrock Agent instead of direct model calls
+            agent_id: Bedrock Agent ID (required if use_bedrock_agent=True)
+            agent_alias_id: Bedrock Agent Alias ID (required if use_bedrock_agent=True)
         """
-        self.xml_parser_agent = xml_parser_agent or XMLParserAgent()
-        self.bedrock_client = bedrock_client or BedrockClient()
-        self.medical_summarizer = BedrockMedicalSummarizer(self.bedrock_client, audit_logger)
-        self.research_analyzer = BedrockResearchAnalyzer(self.bedrock_client, audit_logger)
-        self.s3_persister = s3_persister or S3ReportPersister(audit_logger)
+        self.use_bedrock_agent = use_bedrock_agent
         self.audit_logger = audit_logger
         
-        logger.info("Bedrock Workflow initialized with Claude models")
+        if use_bedrock_agent:
+            if not agent_id or not agent_alias_id:
+                raise ValueError("agent_id and agent_alias_id required when use_bedrock_agent=True")
+            self.agent_client = BedrockAgentClient(agent_id, agent_alias_id)
+            logger.info("Bedrock Workflow initialized with Bedrock Agent")
+        else:
+            self.xml_parser_agent = xml_parser_agent or XMLParserAgent()
+            self.bedrock_client = bedrock_client or BedrockClient()
+            self.medical_summarizer = BedrockMedicalSummarizer(self.bedrock_client, audit_logger)
+            self.research_analyzer = BedrockResearchAnalyzer(self.bedrock_client, audit_logger)
+            self.s3_persister = s3_persister or S3ReportPersister(audit_logger)
+            logger.info("Bedrock Workflow initialized with Claude models")
     
     def execute_analysis(self, patient_name: str) -> Dict[str, Any]:
         """
@@ -52,6 +67,50 @@ class BedrockWorkflow:
         Returns:
             Dict containing complete analysis results
         """
+        if self.use_bedrock_agent:
+            return self._execute_with_bedrock_agent(patient_name)
+        else:
+            return self._execute_with_direct_models(patient_name)
+    
+    def _execute_with_bedrock_agent(self, patient_name: str) -> Dict[str, Any]:
+        """Execute analysis using Bedrock Agent."""
+        workflow_id = f"BEDROCK_AGENT_WF_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        start_time = datetime.now()
+        
+        try:
+            logger.info(f"=" * 80)
+            logger.info(f"Starting Bedrock Agent Workflow: {workflow_id}")
+            logger.info(f"Patient: {patient_name}")
+            logger.info(f"=" * 80)
+            
+            # Invoke Bedrock Agent - it orchestrates everything
+            input_text = f"Analyze medical records for patient: {patient_name}"
+            response = self.agent_client.invoke_agent(input_text)
+            
+            # Parse agent response (should be JSON from Lambda)
+            try:
+                result = json.loads(response)
+            except json.JSONDecodeError:
+                result = {'raw_response': response, 'patient_name': patient_name}
+            
+            duration = (datetime.now() - start_time).total_seconds()
+            result['duration_seconds'] = duration
+            result['workflow_type'] = 'bedrock_agent'
+            result['workflow_id'] = workflow_id
+            
+            logger.info(f"\n" + "=" * 80)
+            logger.info(f"Bedrock Agent workflow completed in {duration:.2f}s")
+            logger.info(f"=" * 80)
+            
+            return result
+            
+        except Exception as e:
+            duration = (datetime.now() - start_time).total_seconds()
+            logger.error(f"Bedrock Agent workflow failed after {duration:.2f}s: {str(e)}")
+            raise
+    
+    def _execute_with_direct_models(self, patient_name: str) -> Dict[str, Any]:
+        """Execute analysis using direct Claude model calls."""
         workflow_id = f"BEDROCK_WF_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         start_time = datetime.now()
         

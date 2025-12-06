@@ -1,0 +1,26 @@
+{
+  "iamRole": "arn:aws:iam::539247495490:role/MedicalRecordAnalysisBedrockAgentRole",
+  "agents": {
+    "xmlParser": {
+      "agentId": "YB9SW5M947",
+      "agentName": "MedicalRecordXMLParserAgent",
+      "aliasId": "LCA107PKTQ",
+      "aliasName": "production",
+      "status": "DEPLOYED"
+    },
+    "medicalSummarization": {
+      "agentId": "ROHX1UYMYW",
+      "agentName": "MedicalSummarizationAgent",
+      "aliasId": "TLQ4PVLUBN",
+      "aliasName": "production",
+      "status": "DEPLOYED"
+    },
+    "researchCorrelation": {
+      "agentId": "BEE3NUCCQG",
+      "agentName": "ResearchCorrelationAgent",
+      "aliasId": "APZ7GKN5CV",
+      "aliasName": "production",
+      "status": "DEPLOYED"
+    }
+  }
+}

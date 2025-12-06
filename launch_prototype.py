@@ -8,6 +8,7 @@ import os
 import sys
 import asyncio
 import argparse
+import json
 from pathlib import Path
 
 # Add src to Python path
@@ -126,16 +127,53 @@ def check_dependencies():
     print("✅ All required dependencies found")
     return True
 
-async def run_prototype_test(use_bedrock: bool = False):
+async def run_prototype_test(use_bedrock: bool = False, use_bedrock_agent: bool = False, 
+                            agent_id: str = None, agent_alias_id: str = None):
     """Run a quick prototype test."""
-    if use_bedrock:
+    if use_bedrock_agent:
+        print("🚀 Starting Medical Record Analysis System - Bedrock Agent Version")
+    elif use_bedrock:
         print("🚀 Starting Medical Record Analysis System - Bedrock Claude Version")
     else:
         print("🚀 Starting Medical Record Analysis System - Python Agents Version")
     print("=" * 60)
     
     try:
-        if use_bedrock:
+        if use_bedrock_agent:
+            # Import Bedrock Agent workflow
+            from src.workflow.bedrock_workflow import BedrockWorkflow
+            
+            print("📋 Bedrock Agent components loaded successfully")
+            print(f"🤖 Using AWS Bedrock Agent: {agent_id}")
+            print("🏥 Launching Medical Record Analysis System...")
+            print()
+            
+            # Get patient name interactively
+            patient_name = input("Enter patient name: ").strip()
+            
+            if not patient_name:
+                print("❌ Error: Patient name cannot be empty")
+                return 1
+            
+            # Initialize workflow with Bedrock Agent
+            workflow = BedrockWorkflow(
+                use_bedrock_agent=True,
+                agent_id=agent_id,
+                agent_alias_id=agent_alias_id
+            )
+            
+            # Execute analysis
+            result = workflow.execute_analysis(patient_name)
+            
+            # Display results
+            print("\n" + "=" * 80)
+            print("✅ ANALYSIS COMPLETE")
+            print("=" * 80)
+            print(json.dumps(result, indent=2, default=str))
+            
+            return 0
+            
+        elif use_bedrock:
             # Import Bedrock components (not main, to avoid argument parsing conflict)
             from src.main_bedrock import print_banner, analyze_patient
             
@@ -189,12 +227,25 @@ def main():
     parser.add_argument('-v', '--verbose', action='store_true', help='Show credential diagnostics')
     parser.add_argument('--bedrock', action='store_true', 
                        help='Use AWS Bedrock Claude AI instead of Python agents')
+    parser.add_argument('--bedrock-agent', action='store_true',
+                       help='Use AWS Bedrock Agent (requires deployed agent)')
+    parser.add_argument('--agent-id', type=str,
+                       help='Bedrock Agent ID (required with --bedrock-agent)')
+    parser.add_argument('--agent-alias-id', type=str,
+                       help='Bedrock Agent Alias ID (required with --bedrock-agent)')
     parser.add_argument('--python', action='store_true',
                        help='Use Python-based agents (default)')
     args = parser.parse_args()
 
     # Determine which version to use
     use_bedrock = args.bedrock
+    use_bedrock_agent = args.bedrock_agent
+    
+    # Validate bedrock-agent requirements
+    if use_bedrock_agent and (not args.agent_id or not args.agent_alias_id):
+        print("❌ Error: --bedrock-agent requires --agent-id and --agent-alias-id")
+        print("   Example: python launch_prototype.py --bedrock-agent --agent-id AGENT123 --agent-alias-id ALIAS456")
+        return 1
     
     # Check dependencies
     if not check_dependencies():
@@ -205,7 +256,13 @@ def main():
         return 1
     
     # Show version info
-    if use_bedrock:
+    if use_bedrock_agent:
+        print("🤖 Mode: AWS Bedrock Agent")
+        print(f"   - Agent ID: {args.agent_id}")
+        print(f"   - Agent Alias: {args.agent_alias_id}")
+        print("   - Agent orchestrates full workflow via Lambda")
+        print()
+    elif use_bedrock:
         print("🤖 Mode: AWS Bedrock Claude AI")
         print("   - Medical summarization: Claude 3.5 Haiku")
         print("   - Research analysis: Claude 3.5 Haiku")
@@ -220,7 +277,12 @@ def main():
     # Run prototype
     try:
         # Both versions now run through asyncio for consistency
-        return asyncio.run(run_prototype_test(use_bedrock=use_bedrock))
+        return asyncio.run(run_prototype_test(
+            use_bedrock=use_bedrock,
+            use_bedrock_agent=use_bedrock_agent,
+            agent_id=args.agent_id,
+            agent_alias_id=args.agent_alias_id
+        ))
     except KeyboardInterrupt:
         print("\n\n👋 Prototype test interrupted by user")
         return 0
