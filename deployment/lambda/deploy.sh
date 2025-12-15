@@ -6,7 +6,7 @@ set -e  # Exit on error
 # Configuration
 STACK_NAME="medical-record-analysis-lambda"
 REGION="us-east-1"
-S3_BUCKET="medical-record-analysis-deployment"
+S3_BUCKET="medical-record-analysis-deployment-539247495490"
 ENVIRONMENT="${1:-production}"
 
 # Colors for output
@@ -126,6 +126,27 @@ sam deploy \
 echo -e "${GREEN}✓ SAM deployment complete${NC}"
 echo ""
 
+# Deploy Bedrock Agent permissions (optional)
+echo "Deploying Bedrock Agent permissions..."
+BEDROCK_STACK_NAME="medical-record-bedrock-permissions"
+BEDROCK_AGENT_ID="${BEDROCK_AGENT_ID:-LAA6HDZPAH}"
+
+aws cloudformation deploy \
+    --template-file bedrock-agent-permissions.yaml \
+    --stack-name $BEDROCK_STACK_NAME \
+    --region $REGION \
+    --parameter-overrides \
+        BedrockAgentId=$BEDROCK_AGENT_ID \
+        LambdaFunctionName=MedicalAnalysisMasterWorkflow \
+    --no-fail-on-empty-changeset \
+    --tags \
+        Application=MedicalRecordAnalysis \
+        Component=BedrockAgent \
+        Environment=$ENVIRONMENT
+
+echo -e "${GREEN}✓ Bedrock Agent permissions deployed${NC}"
+echo ""
+
 # Get outputs
 echo "Retrieving deployment outputs..."
 API_ENDPOINT=$(aws cloudformation describe-stacks \
@@ -160,6 +181,7 @@ echo "Lambda Functions:"
 echo "  - MedicalRecordXMLParser"
 echo "  - MedicalSummarization"
 echo "  - ResearchCorrelation"
+echo "  - MedicalAnalysisMasterWorkflow (for Bedrock Agent)"
 echo ""
 echo "To test the API:"
 echo "  curl -X POST $API_ENDPOINT/parse-patient-record \\"

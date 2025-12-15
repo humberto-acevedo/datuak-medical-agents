@@ -1,134 +1,136 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Medical Record Analysis System - Lambda Functions for Bedrock Agents
-
 Parameters:
   Environment:
     Type: String
     Default: production
     AllowedValues:
-      - development
-      - staging
-      - production
+    - development
+    - staging
+    - production
     Description: Deployment environment
-  
   S3BucketName:
     Type: String
     Default: patient-records-20251024
     Description: S3 bucket name for patient records
-  
   LambdaTimeout:
     Type: Number
     Default: 300
     Description: Lambda function timeout in seconds
-  
   LambdaMemorySize:
     Type: Number
     Default: 512
     Description: Lambda function memory size in MB
-
 Globals:
   Function:
     Runtime: python3.11
-    Timeout: !Ref LambdaTimeout
-    MemorySize: !Ref LambdaMemorySize
+    Timeout:
+      Ref: LambdaTimeout
+    MemorySize:
+      Ref: LambdaMemorySize
     Environment:
       Variables:
-        ENVIRONMENT: !Ref Environment
-        S3_BUCKET_NAME: !Ref S3BucketName
+        ENVIRONMENT:
+          Ref: Environment
+        S3_BUCKET_NAME:
+          Ref: S3BucketName
         LOG_LEVEL: INFO
     Tags:
       Application: MedicalRecordAnalysis
       Compliance: HIPAA
-      Environment: !Ref Environment
-
+      Environment:
+        Ref: Environment
 Resources:
-  # Lambda Execution Role
   LambdaExecutionRole:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
-          - Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-            Action: sts:AssumeRole
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
       ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
       Policies:
-        - PolicyName: MedicalRecordAnalysisLambdaPolicy
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Sid: S3Access
-                Effect: Allow
-                Action:
-                  - s3:GetObject
-                  - s3:PutObject
-                  - s3:ListBucket
-                  - s3:GetObjectVersion
-                Resource:
-                  - !Sub 'arn:aws:s3:::${S3BucketName}'
-                  - !Sub 'arn:aws:s3:::${S3BucketName}/*'
-                Condition:
-                  StringEquals:
-                    aws:RequestedRegion: us-east-1
-              - Sid: KMSAccess
-                Effect: Allow
-                Action:
-                  - kms:Decrypt
-                  - kms:Encrypt
-                  - kms:GenerateDataKey
-                  - kms:DescribeKey
-                Resource: !Sub 'arn:aws:kms:us-east-1:${AWS::AccountId}:key/*'
-                Condition:
-                  StringEquals:
-                    kms:ViaService: s3.us-east-1.amazonaws.com
-              - Sid: CloudWatchLogs
-                Effect: Allow
-                Action:
-                  - logs:CreateLogGroup
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
-                Resource: !Sub 'arn:aws:logs:us-east-1:${AWS::AccountId}:log-group:/aws/lambda/medical-record-*'
-              - Sid: BedrockAccess
-                Effect: Allow
-                Action:
-                  - bedrock:InvokeModel
-                  - bedrock:InvokeModelWithResponseStream
-                Resource: 
-                  - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0'
-                  - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0'
+      - PolicyName: MedicalRecordAnalysisLambdaPolicy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Sid: S3Access
+            Effect: Allow
+            Action:
+            - s3:GetObject
+            - s3:PutObject
+            - s3:ListBucket
+            - s3:GetObjectVersion
+            Resource:
+            - Fn::Sub: arn:aws:s3:::${S3BucketName}
+            - Fn::Sub: arn:aws:s3:::${S3BucketName}/*
+            Condition:
+              StringEquals:
+                aws:RequestedRegion: us-east-1
+          - Sid: KMSAccess
+            Effect: Allow
+            Action:
+            - kms:Decrypt
+            - kms:Encrypt
+            - kms:GenerateDataKey
+            - kms:DescribeKey
+            Resource:
+              Fn::Sub: arn:aws:kms:us-east-1:${AWS::AccountId}:key/*
+            Condition:
+              StringEquals:
+                kms:ViaService: s3.us-east-1.amazonaws.com
+          - Sid: CloudWatchLogs
+            Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource:
+              Fn::Sub: arn:aws:logs:us-east-1:${AWS::AccountId}:log-group:/aws/lambda/medical-record-*
+          - Sid: BedrockAccess
+            Effect: Allow
+            Action:
+            - bedrock:InvokeModel
+            - bedrock:InvokeModelWithResponseStream
+            Resource:
+            - Fn::Sub: arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0
+            - Fn::Sub: arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0
       Tags:
-        - Key: Application
-          Value: MedicalRecordAnalysis
-        - Key: Compliance
-          Value: HIPAA
-
-  # Lambda Layer for shared dependencies
+      - Key: Application
+        Value: MedicalRecordAnalysis
+      - Key: Compliance
+        Value: HIPAA
+    Metadata:
+      SamResourceId: LambdaExecutionRole
   MedicalRecordAnalysisLayer:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: medical-record-analysis-dependencies
       Description: Shared dependencies for Medical Record Analysis Lambda functions
-      ContentUri: ./layer/
+      ContentUri: s3://medical-record-analysis-deployment/9394c44d380473e9e71bd7b1559458d9
       CompatibleRuntimes:
-        - python3.11
+      - python3.11
       RetentionPolicy: Retain
     Metadata:
       BuildMethod: python3.11
-
-  # XML Parser Lambda Function
+      SamResourceId: MedicalRecordAnalysisLayer
   XMLParserFunction:
     Type: AWS::Serverless::Function
     Properties:
       Description: Parses patient XML records from S3
-      CodeUri: ./
+      CodeUri: s3://medical-record-analysis-deployment/31fd8a376da661b36198af4c658fc833
       Handler: xml_parser_handler.lambda_handler
-      Role: !GetAtt LambdaExecutionRole.Arn
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
       Layers:
-        - !Ref MedicalRecordAnalysisLayer
+      - Ref: MedicalRecordAnalysisLayer
       Environment:
         Variables:
           FUNCTION_NAME: XMLParser
@@ -138,20 +140,24 @@ Resources:
           Properties:
             Path: /parse-patient-record
             Method: POST
-            RestApiId: !Ref MedicalRecordAnalysisAPI
+            RestApiId:
+              Ref: MedicalRecordAnalysisAPI
       Tags:
         Component: XMLParser
-
-  # Medical Summarization Lambda Function
+    Metadata:
+      SamResourceId: XMLParserFunction
   MedicalSummarizationFunction:
     Type: AWS::Serverless::Function
     Properties:
       Description: Generates medical summaries from patient data
-      CodeUri: ./
+      CodeUri: s3://medical-record-analysis-deployment/31fd8a376da661b36198af4c658fc833
       Handler: medical_summarization_handler.lambda_handler
-      Role: !GetAtt LambdaExecutionRole.Arn
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
       Layers:
-        - !Ref MedicalRecordAnalysisLayer
+      - Ref: MedicalRecordAnalysisLayer
       Environment:
         Variables:
           FUNCTION_NAME: MedicalSummarization
@@ -161,20 +167,24 @@ Resources:
           Properties:
             Path: /generate-summary
             Method: POST
-            RestApiId: !Ref MedicalRecordAnalysisAPI
+            RestApiId:
+              Ref: MedicalRecordAnalysisAPI
       Tags:
         Component: MedicalSummarization
-
-  # Research Correlation Lambda Function
+    Metadata:
+      SamResourceId: MedicalSummarizationFunction
   ResearchCorrelationFunction:
     Type: AWS::Serverless::Function
     Properties:
       Description: Correlates medical research with patient conditions
-      CodeUri: ./
+      CodeUri: s3://medical-record-analysis-deployment/31fd8a376da661b36198af4c658fc833
       Handler: research_correlation_handler.lambda_handler
-      Role: !GetAtt LambdaExecutionRole.Arn
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
       Layers:
-        - !Ref MedicalRecordAnalysisLayer
+      - Ref: MedicalRecordAnalysisLayer
       Environment:
         Variables:
           FUNCTION_NAME: ResearchCorrelation
@@ -184,111 +194,129 @@ Resources:
           Properties:
             Path: /correlate-research
             Method: POST
-            RestApiId: !Ref MedicalRecordAnalysisAPI
+            RestApiId:
+              Ref: MedicalRecordAnalysisAPI
       Tags:
         Component: ResearchCorrelation
-
-  # Master Workflow Lambda Function (for Bedrock Agent)
+    Metadata:
+      SamResourceId: ResearchCorrelationFunction
   MasterWorkflowFunction:
     Type: AWS::Serverless::Function
     Properties:
       Description: Master workflow orchestrator for Bedrock Agent
-      CodeUri: ./
+      CodeUri: s3://medical-record-analysis-deployment/31fd8a376da661b36198af4c658fc833
       Handler: master_workflow_handler.lambda_handler
-      Role: !GetAtt LambdaExecutionRole.Arn
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
       Layers:
-        - !Ref MedicalRecordAnalysisLayer
-      Timeout: 900  # 15 minutes for complete workflow
-      MemorySize: 1024  # More memory for complex workflow
+      - Ref: MedicalRecordAnalysisLayer
+      Timeout: 900
+      MemorySize: 1024
       Environment:
         Variables:
           FUNCTION_NAME: MasterWorkflow
       Tags:
         Component: MasterWorkflow
         BedrockAgent: true
-
-  # API Gateway
+    Metadata:
+      SamResourceId: MasterWorkflowFunction
   MedicalRecordAnalysisAPI:
     Type: AWS::Serverless::Api
     Properties:
       Name: MedicalRecordAnalysisAPI
-      StageName: !Ref Environment
+      StageName:
+        Ref: Environment
       Description: API Gateway for Medical Record Analysis Lambda functions
       Cors:
-        AllowMethods: "'POST, GET, OPTIONS'"
-        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-        AllowOrigin: "'*'"  # Configure appropriately for production
+        AllowMethods: '''POST, GET, OPTIONS'''
+        AllowHeaders: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+        AllowOrigin: '''*'''
       Auth:
         ApiKeyRequired: true
       Tags:
         Application: MedicalRecordAnalysis
         Compliance: HIPAA
-
-  # API Key
+    Metadata:
+      SamResourceId: MedicalRecordAnalysisAPI
   MedicalRecordAnalysisAPIKey:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
-      - MedicalRecordAnalysisAPI
+    - MedicalRecordAnalysisAPI
     Properties:
       Name: MedicalRecordAnalysisAPIKey
       Description: API Key for Medical Record Analysis API
       Enabled: true
       StageKeys:
-        - RestApiId: !Ref MedicalRecordAnalysisAPI
-          StageName: !Ref Environment
-
-  # Usage Plan
+      - RestApiId:
+          Ref: MedicalRecordAnalysisAPI
+        StageName:
+          Ref: Environment
+    Metadata:
+      SamResourceId: MedicalRecordAnalysisAPIKey
   MedicalRecordAnalysisUsagePlan:
     Type: AWS::ApiGateway::UsagePlan
     DependsOn:
-      - MedicalRecordAnalysisAPI
+    - MedicalRecordAnalysisAPI
     Properties:
       UsagePlanName: MedicalRecordAnalysisUsagePlan
       Description: Usage plan for Medical Record Analysis API
       ApiStages:
-        - ApiId: !Ref MedicalRecordAnalysisAPI
-          Stage: !Ref Environment
+      - ApiId:
+          Ref: MedicalRecordAnalysisAPI
+        Stage:
+          Ref: Environment
       Throttle:
         BurstLimit: 100
         RateLimit: 50
       Quota:
         Limit: 10000
         Period: DAY
-
-  # Usage Plan Key
+    Metadata:
+      SamResourceId: MedicalRecordAnalysisUsagePlan
   MedicalRecordAnalysisUsagePlanKey:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties:
-      KeyId: !Ref MedicalRecordAnalysisAPIKey
+      KeyId:
+        Ref: MedicalRecordAnalysisAPIKey
       KeyType: API_KEY
-      UsagePlanId: !Ref MedicalRecordAnalysisUsagePlan
-
-  # CloudWatch Log Groups
+      UsagePlanId:
+        Ref: MedicalRecordAnalysisUsagePlan
+    Metadata:
+      SamResourceId: MedicalRecordAnalysisUsagePlanKey
   XMLParserLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: !Sub '/aws/lambda/${XMLParserFunction}'
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${XMLParserFunction}
       RetentionInDays: 30
-
+    Metadata:
+      SamResourceId: XMLParserLogGroup
   MedicalSummarizationLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: !Sub '/aws/lambda/${MedicalSummarizationFunction}'
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${MedicalSummarizationFunction}
       RetentionInDays: 30
-
+    Metadata:
+      SamResourceId: MedicalSummarizationLogGroup
   ResearchCorrelationLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: !Sub '/aws/lambda/${ResearchCorrelationFunction}'
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${ResearchCorrelationFunction}
       RetentionInDays: 30
-
+    Metadata:
+      SamResourceId: ResearchCorrelationLogGroup
   MasterWorkflowLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: !Sub '/aws/lambda/${MasterWorkflowFunction}'
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${MasterWorkflowFunction}
       RetentionInDays: 30
-
-  # CloudWatch Alarms
+    Metadata:
+      SamResourceId: MasterWorkflowLogGroup
   XMLParserErrorAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
@@ -302,9 +330,11 @@ Resources:
       Threshold: 5
       ComparisonOperator: GreaterThanThreshold
       Dimensions:
-        - Name: FunctionName
-          Value: !Ref XMLParserFunction
-
+      - Name: FunctionName
+        Value:
+          Ref: XMLParserFunction
+    Metadata:
+      SamResourceId: XMLParserErrorAlarm
   MedicalSummarizationErrorAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
@@ -318,9 +348,11 @@ Resources:
       Threshold: 5
       ComparisonOperator: GreaterThanThreshold
       Dimensions:
-        - Name: FunctionName
-          Value: !Ref MedicalSummarizationFunction
-
+      - Name: FunctionName
+        Value:
+          Ref: MedicalSummarizationFunction
+    Metadata:
+      SamResourceId: MedicalSummarizationErrorAlarm
   ResearchCorrelationErrorAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
@@ -334,9 +366,11 @@ Resources:
       Threshold: 5
       ComparisonOperator: GreaterThanThreshold
       Dimensions:
-        - Name: FunctionName
-          Value: !Ref ResearchCorrelationFunction
-
+      - Name: FunctionName
+        Value:
+          Ref: ResearchCorrelationFunction
+    Metadata:
+      SamResourceId: ResearchCorrelationErrorAlarm
   MasterWorkflowErrorAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
@@ -350,46 +384,65 @@ Resources:
       Threshold: 5
       ComparisonOperator: GreaterThanThreshold
       Dimensions:
-        - Name: FunctionName
-          Value: !Ref MasterWorkflowFunction
-
+      - Name: FunctionName
+        Value:
+          Ref: MasterWorkflowFunction
+    Metadata:
+      SamResourceId: MasterWorkflowErrorAlarm
 Outputs:
   XMLParserFunctionArn:
     Description: ARN of XML Parser Lambda Function
-    Value: !GetAtt XMLParserFunction.Arn
+    Value:
+      Fn::GetAtt:
+      - XMLParserFunction
+      - Arn
     Export:
-      Name: !Sub '${AWS::StackName}-XMLParserFunctionArn'
-
+      Name:
+        Fn::Sub: ${AWS::StackName}-XMLParserFunctionArn
   MedicalSummarizationFunctionArn:
     Description: ARN of Medical Summarization Lambda Function
-    Value: !GetAtt MedicalSummarizationFunction.Arn
+    Value:
+      Fn::GetAtt:
+      - MedicalSummarizationFunction
+      - Arn
     Export:
-      Name: !Sub '${AWS::StackName}-MedicalSummarizationFunctionArn'
-
+      Name:
+        Fn::Sub: ${AWS::StackName}-MedicalSummarizationFunctionArn
   ResearchCorrelationFunctionArn:
     Description: ARN of Research Correlation Lambda Function
-    Value: !GetAtt ResearchCorrelationFunction.Arn
+    Value:
+      Fn::GetAtt:
+      - ResearchCorrelationFunction
+      - Arn
     Export:
-      Name: !Sub '${AWS::StackName}-ResearchCorrelationFunctionArn'
-
+      Name:
+        Fn::Sub: ${AWS::StackName}-ResearchCorrelationFunctionArn
   MasterWorkflowFunctionArn:
     Description: ARN of Master Workflow Lambda Function (for Bedrock Agent)
-    Value: !GetAtt MasterWorkflowFunction.Arn
+    Value:
+      Fn::GetAtt:
+      - MasterWorkflowFunction
+      - Arn
     Export:
-      Name: !Sub '${AWS::StackName}-MasterWorkflowFunctionArn'
-
+      Name:
+        Fn::Sub: ${AWS::StackName}-MasterWorkflowFunctionArn
   APIEndpoint:
     Description: API Gateway endpoint URL
-    Value: !Sub 'https://${MedicalRecordAnalysisAPI}.execute-api.${AWS::Region}.amazonaws.com/${Environment}'
+    Value:
+      Fn::Sub: https://${MedicalRecordAnalysisAPI}.execute-api.${AWS::Region}.amazonaws.com/${Environment}
     Export:
-      Name: !Sub '${AWS::StackName}-APIEndpoint'
-
+      Name:
+        Fn::Sub: ${AWS::StackName}-APIEndpoint
   APIKey:
     Description: API Key ID
-    Value: !Ref MedicalRecordAnalysisAPIKey
-
+    Value:
+      Ref: MedicalRecordAnalysisAPIKey
   LambdaExecutionRoleArn:
     Description: ARN of Lambda Execution Role
-    Value: !GetAtt LambdaExecutionRole.Arn
+    Value:
+      Fn::GetAtt:
+      - LambdaExecutionRole
+      - Arn
     Export:
-      Name: !Sub '${AWS::StackName}-LambdaExecutionRoleArn'
+      Name:
+        Fn::Sub: ${AWS::StackName}-LambdaExecutionRoleArn

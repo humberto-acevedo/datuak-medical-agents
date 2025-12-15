@@ -1,0 +1,32 @@
+# Additional CloudFormation template for Bedrock Agent permissions
+# This should be deployed after the main Lambda stack
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Bedrock Agent permissions for Medical Analysis Master Workflow Lambda
+
+Parameters:
+  BedrockAgentId:
+    Type: String
+    Default: LAA6HDZPAH
+    Description: Bedrock Agent ID that needs access to Lambda
+  
+  LambdaFunctionName:
+    Type: String
+    Default: MedicalAnalysisMasterWorkflow
+    Description: Lambda function name to grant access to
+
+Resources:
+  # Lambda Resource-Based Policy for Bedrock Agent
+  BedrockAgentLambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref LambdaFunctionName
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceArn: !Sub 'arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:agent/${BedrockAgentId}'
+      StatementId: bedrock-agent-invoke-permission
+
+Outputs:
+  PermissionAdded:
+    Description: Confirmation that Bedrock Agent permission was added
+    Value: !Sub 'Bedrock Agent ${BedrockAgentId} can now invoke ${LambdaFunctionName}'

@@ -67,6 +67,17 @@
         "cloudtrail:LookupEvents"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "LambdaInvokePermission",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction"
+      ],
+      "Resource": [
+        "arn:aws:lambda:us-east-1:539247495490:function:medical-record-lambda-simpl-MasterWorkflowFunction-*",
+        "arn:aws:lambda:us-east-1:539247495490:function:*MasterWorkflowFunction*"
+      ]
     }
   ]
 }

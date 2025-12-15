@@ -56,6 +56,10 @@ logs/
 patient_data/
 medical_records/
 
+# Testing
+deployment/lambda/layer/
+deployment/lambda/.aws-sam
+
 # OS
 .DS_Store
 Thumbs.db

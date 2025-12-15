@@ -1,0 +1,21 @@
+{
+  "messageVersion": "1.0",
+  "agent": {
+    "name": "MedicalRecordAnalysisMasterAgent",
+    "version": "DRAFT",
+    "id": "LAA6HDZPAH",
+    "alias": "3SVECWUINK"
+  },
+  "inputText": "Analyze medical records for patient: Jane Smith",
+  "sessionId": "test-session-123",
+  "actionGroup": "MasterWorkflowActionGroup",
+  "apiPath": "/analyze",
+  "httpMethod": "POST",
+  "parameters": [
+    {
+      "name": "patient_name",
+      "type": "string", 
+      "value": "Jane Smith"
+    }
+  ]
+}

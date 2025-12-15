@@ -1,0 +1,91 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Medical Record Analysis System - Lambda Functions Only
+
+Parameters:
+  Environment:
+    Type: String
+    Default: production
+    AllowedValues:
+      - development
+      - staging
+      - production
+    Description: Deployment environment
+  
+  S3BucketName:
+    Type: String
+    Default: patient-records-20251024
+    Description: S3 bucket name for patient records
+
+Globals:
+  Function:
+    Runtime: python3.11
+    Timeout: 300
+    MemorySize: 512
+    Environment:
+      Variables:
+        ENVIRONMENT: !Ref Environment
+        S3_BUCKET_NAME: !Ref S3BucketName
+        LOG_LEVEL: INFO
+
+Resources:
+  # Lambda Execution Role
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: MedicalRecordAnalysisLambdaPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:ListBucket
+                Resource:
+                  - !Sub 'arn:aws:s3:::${S3BucketName}'
+                  - !Sub 'arn:aws:s3:::${S3BucketName}/*'
+              - Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                  - bedrock:InvokeModelWithResponseStream
+                Resource: 
+                  - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-5-haiku-20241022-v1:0'
+                  - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0'
+
+  # Master Workflow Lambda Function (for Bedrock Agent)
+  MasterWorkflowFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Master workflow orchestrator for Bedrock Agent
+      CodeUri: ./
+      Handler: master_workflow_handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 900
+      MemorySize: 1024
+      Environment:
+        Variables:
+          FUNCTION_NAME: MasterWorkflow
+
+Outputs:
+  MasterWorkflowFunctionArn:
+    Description: ARN of Master Workflow Lambda Function (for Bedrock Agent)
+    Value: !GetAtt MasterWorkflowFunction.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-MasterWorkflowFunctionArn'
+
+  LambdaExecutionRoleArn:
+    Description: ARN of Lambda Execution Role
+    Value: !GetAtt LambdaExecutionRole.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-LambdaExecutionRoleArn'

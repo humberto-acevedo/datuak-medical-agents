@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Master Medical Analysis Workflow API",
+    "version": "1.0.0",
+    "description": "API for executing complete medical record analysis workflow"
+  },
+  "paths": {
+    "/analyze": {
+      "post": {
+        "summary": "Analyze patient medical records",
+        "description": "Execute complete medical analysis workflow including XML parsing, medical summarization, research correlation, and report generation",
+        "operationId": "analyzePatient",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["patient_name"],
+                "properties": {
+                  "patient_name": {
+                    "type": "string",
+                    "description": "Name of the patient to analyze"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful analysis",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "patient_id": {
+                      "type": "string",
+                      "description": "Patient identifier"
+                    },
+                    "patient_name": {
+                      "type": "string",
+                      "description": "Patient name"
+                    },
+                    "medical_summary": {
+                      "type": "string",
+                      "description": "Comprehensive medical summary"
+                    },
+                    "research_analysis": {
+                      "type": "object",
+                      "description": "Research correlation results"
+                    },
+                    "report_s3_key": {
+                      "type": "string",
+                      "description": "S3 key where report is stored"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Analysis failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

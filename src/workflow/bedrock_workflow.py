@@ -57,6 +57,28 @@ class BedrockWorkflow:
             self.s3_persister = s3_persister or S3ReportPersister(audit_logger)
             logger.info("Bedrock Workflow initialized with Claude models")
     
+    def _ensure_direct_model_components(self):
+        """Ensure all direct model components are initialized (for fallback scenarios)."""
+        if not hasattr(self, 'xml_parser_agent') or self.xml_parser_agent is None:
+            logger.info("Initializing XML parser agent for fallback...")
+            self.xml_parser_agent = XMLParserAgent()
+        
+        if not hasattr(self, 'bedrock_client') or self.bedrock_client is None:
+            logger.info("Initializing Bedrock client for fallback...")
+            self.bedrock_client = BedrockClient()
+        
+        if not hasattr(self, 'medical_summarizer') or self.medical_summarizer is None:
+            logger.info("Initializing medical summarizer for fallback...")
+            self.medical_summarizer = BedrockMedicalSummarizer(self.bedrock_client, self.audit_logger)
+        
+        if not hasattr(self, 'research_analyzer') or self.research_analyzer is None:
+            logger.info("Initializing research analyzer for fallback...")
+            self.research_analyzer = BedrockResearchAnalyzer(self.bedrock_client, self.audit_logger)
+        
+        if not hasattr(self, 's3_persister') or self.s3_persister is None:
+            logger.info("Initializing S3 persister for fallback...")
+            self.s3_persister = S3ReportPersister(self.audit_logger)
+    
     def execute_analysis(self, patient_name: str) -> Dict[str, Any]:
         """
         Execute complete medical analysis workflow using Bedrock.
@@ -73,7 +95,7 @@ class BedrockWorkflow:
             return self._execute_with_direct_models(patient_name)
     
     def _execute_with_bedrock_agent(self, patient_name: str) -> Dict[str, Any]:
-        """Execute analysis using Bedrock Agent."""
+        """Execute analysis using Bedrock Agent with fallback to direct models."""
         workflow_id = f"BEDROCK_AGENT_WF_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         start_time = datetime.now()
         
@@ -106,8 +128,22 @@ class BedrockWorkflow:
             
         except Exception as e:
             duration = (datetime.now() - start_time).total_seconds()
-            logger.error(f"Bedrock Agent workflow failed after {duration:.2f}s: {str(e)}")
-            raise
+            error_msg = str(e)
+            
+            # Check if it's a Lambda permission error
+            if "dependencyFailedException" in error_msg and "Access denied" in error_msg and "Lambda function" in error_msg:
+                logger.warning(f"Bedrock Agent Lambda permission error after {duration:.2f}s")
+                logger.warning("Falling back to direct Claude model calls...")
+                
+                # Fallback to direct models
+                try:
+                    return self._execute_with_direct_models(patient_name)
+                except Exception as fallback_error:
+                    logger.error(f"Fallback to direct models also failed: {str(fallback_error)}")
+                    raise Exception(f"Both Bedrock Agent and direct models failed. Agent error: {error_msg}. Direct model error: {str(fallback_error)}")
+            else:
+                logger.error(f"Bedrock Agent workflow failed after {duration:.2f}s: {error_msg}")
+                raise
     
     def _execute_with_direct_models(self, patient_name: str) -> Dict[str, Any]:
         """Execute analysis using direct Claude model calls."""
@@ -119,6 +155,9 @@ class BedrockWorkflow:
             logger.info(f"Starting Bedrock Workflow: {workflow_id}")
             logger.info(f"Patient: {patient_name}")
             logger.info(f"=" * 80)
+            
+            # Initialize components if not already initialized (for fallback scenarios)
+            self._ensure_direct_model_components()
             
             # Step 1: Parse XML from S3
             logger.info("\n[Step 1/4] Parsing patient XML from S3...")

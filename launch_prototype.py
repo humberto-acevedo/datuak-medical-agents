@@ -162,16 +162,41 @@ async def run_prototype_test(use_bedrock: bool = False, use_bedrock_agent: bool 
                 agent_alias_id=agent_alias_id
             )
             
-            # Execute analysis
-            result = workflow.execute_analysis(patient_name)
-            
-            # Display results
-            print("\n" + "=" * 80)
-            print("✅ ANALYSIS COMPLETE")
-            print("=" * 80)
-            print(json.dumps(result, indent=2, default=str))
-            
-            return 0
+            # Execute analysis with error handling
+            try:
+                result = workflow.execute_analysis(patient_name)
+                
+                # Display results
+                print("\n" + "=" * 80)
+                print("✅ ANALYSIS COMPLETE")
+                print("=" * 80)
+                print(json.dumps(result, indent=2, default=str))
+                
+                return 0
+                
+            except Exception as e:
+                error_msg = str(e)
+                
+                if "dependencyFailedException" in error_msg and "Access denied" in error_msg:
+                    print("\n" + "=" * 80)
+                    print("❌ BEDROCK AGENT PERMISSION ERROR")
+                    print("=" * 80)
+                    print("The Bedrock Agent doesn't have permission to invoke the Lambda function.")
+                    print("\n🔧 SOLUTIONS:")
+                    print("1. Fix Lambda permissions (recommended):")
+                    print("   aws lambda add-permission \\")
+                    print("     --function-name MedicalAnalysisMasterWorkflow \\")
+                    print("     --statement-id bedrock-agent-invoke \\")
+                    print("     --action lambda:InvokeFunction \\")
+                    print("     --principal bedrock.amazonaws.com \\")
+                    print(f"     --source-arn 'arn:aws:bedrock:us-east-1:539247495490:agent/{agent_id}'")
+                    print("\n2. Use direct Bedrock models instead:")
+                    print("   python launch_prototype.py --bedrock")
+                    print("\n3. Contact AWS administrator to fix IAM permissions")
+                    print("=" * 80)
+                    return 1
+                else:
+                    raise
             
         elif use_bedrock:
             # Import Bedrock components (not main, to avoid argument parsing conflict)
