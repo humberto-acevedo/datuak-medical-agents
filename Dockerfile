@@ -1,29 +1,37 @@
-FROM python:3.11-slim
-
-# Set working directory
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    libxml2-dev \
-    libxslt-dev \
-    && rm -rf /var/lib/apt/lists/*
+# Install build dependencies
+RUN apt-get update && apt-get install -y gcc python3-dev && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install Python dependencies
-COPY requirements.txt .
-RUN python3 -m pip install --no-cache-dir -r requirements.txt
+# All environment variables in one layer
+ENV UV_SYSTEM_PYTHON=1 \
+    UV_COMPILE_BYTECODE=1 \
+    UV_NO_PROGRESS=1 \
+    PYTHONUNBUFFERED=1 \
+    DOCKER_CONTAINER=1 \
+    AWS_REGION=us-east-1 \
+    AWS_DEFAULT_REGION=us-east-1
 
-# Copy source code
-COPY src/ ./src/
-COPY tests/ ./tests/
+COPY requirements.txt requirements.txt
+# Install from requirements file
+RUN uv pip install -r requirements.txt
 
-# Set Python path
-ENV PYTHONPATH=/app/src
+RUN uv pip install aws-opentelemetry-distro==0.12.2
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import sys; sys.exit(0)"
+# Signal that this is running in Docker for host binding logic
+ENV DOCKER_CONTAINER=1
 
-# Default command
-CMD ["python", "-m", "src.main"]
+# Create non-root user
+RUN useradd -m -u 1000 bedrock_agentcore
+USER bedrock_agentcore
+
+EXPOSE 9000
+EXPOSE 8000
+EXPOSE 8080
+
+# Copy entire project (respecting .dockerignore)
+COPY . .
+
+# Use the file directly from root
+CMD ["opentelemetry-instrument", "python", "bedrock_agent_core_lib.py"]

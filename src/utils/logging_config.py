@@ -91,8 +91,8 @@ class AuditLogger:
     def _setup_handlers(self):
         """Set up logging handlers for audit trail."""
         
-        # Create logs directory
-        log_dir = Path("logs")
+        # Create logs directory in /tmp (writable in containers)
+        log_dir = Path("/tmp/logs")
         log_dir.mkdir(exist_ok=True)
         
         # Audit file handler (rotating for long-term storage)

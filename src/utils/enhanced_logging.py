@@ -10,6 +10,8 @@ from contextlib import contextmanager
 from dataclasses import dataclass, asdict
 import threading
 from queue import Queue
+import boto3
+from botocore.exceptions import ClientError
 
 @dataclass
 class PerformanceMetric:
@@ -21,6 +23,72 @@ class PerformanceMetric:
     duration_seconds: float
     success: bool
     patient_id: Optional[str] = None
+
+class S3LogHandler(logging.Handler):
+    """Custom log handler that uploads logs to S3."""
+    
+    def __init__(self, bucket_name: str, key_prefix: str = "logs/"):
+        super().__init__()
+        self.bucket_name = bucket_name
+        self.key_prefix = key_prefix
+        self.s3_client = boto3.client('s3')
+        self.log_buffer = []
+        self.buffer_size = 50  # Upload after 50 log entries
+        
+    def emit(self, record):
+        """Add log record to buffer and upload when buffer is full."""
+        try:
+            log_entry = {
+                'timestamp': datetime.fromtimestamp(record.created).isoformat(),
+                'level': record.levelname,
+                'logger': record.name,
+                'message': record.getMessage(),
+                'module': record.module,
+                'function': record.funcName,
+                'line': record.lineno
+            }
+            
+            self.log_buffer.append(log_entry)
+            
+            if len(self.log_buffer) >= self.buffer_size:
+                self._upload_logs()
+                
+        except Exception:
+            # Don't let logging errors break the application
+            pass
+    
+    def _upload_logs(self):
+        """Upload buffered logs to S3."""
+        if not self.log_buffer:
+            return
+            
+        try:
+            timestamp = datetime.now().strftime("%Y/%m/%d/%H-%M-%S")
+            key = f"{self.key_prefix}agent-logs-{timestamp}.json"
+            
+            log_data = {
+                'logs': self.log_buffer,
+                'upload_time': datetime.now().isoformat(),
+                'count': len(self.log_buffer)
+            }
+            
+            self.s3_client.put_object(
+                Bucket=self.bucket_name,
+                Key=key,
+                Body=json.dumps(log_data, indent=2),
+                ContentType='application/json'
+            )
+            
+            self.log_buffer.clear()
+            
+        except ClientError:
+            # Silently fail S3 uploads to avoid breaking the application
+            pass
+    
+    def close(self):
+        """Upload remaining logs when handler is closed."""
+        self._upload_logs()
+        super().close()
     additional_data: Optional[Dict[str, Any]] = None
     
     def to_dict(self) -> Dict[str, Any]:
@@ -243,7 +311,7 @@ class EnhancedLoggingSystem:
     """Enhanced logging system with structured logging and performance monitoring."""
     
     def __init__(self, 
-                 log_dir: str = "logs",
+                 log_dir: str = "/tmp/logs",
                  log_level: str = "INFO",
                  enable_performance_monitoring: bool = True,
                  enable_structured_logging: bool = True):
@@ -261,8 +329,10 @@ class EnhancedLoggingSystem:
         self.enable_performance_monitoring = enable_performance_monitoring
         self.enable_structured_logging = enable_structured_logging
         
-        # Create log directory
-        self.log_dir.mkdir(exist_ok=True)
+        # Create log directory (skip in restricted environments)
+        self.use_file_logging = self._can_create_log_directory()
+        if self.use_file_logging:
+            self.log_dir.mkdir(exist_ok=True)
         
         # Initialize performance monitor
         if self.enable_performance_monitoring:
@@ -272,6 +342,23 @@ class EnhancedLoggingSystem:
         self._setup_logging()
         
         logging.info("Enhanced logging system initialized")
+    
+    def _can_create_log_directory(self) -> bool:
+        """Check if we can create log directory (skip in restricted environments)."""
+        import os
+        # Skip file logging in Lambda/Bedrock Agent environments
+        if (os.environ.get('AWS_LAMBDA_FUNCTION_NAME') or 
+            os.environ.get('AWS_EXECUTION_ENV', '').startswith('AWS_Lambda')):
+            return False
+        try:
+            # Test if we can create the directory without actually creating it yet
+            test_path = self.log_dir / '.test'
+            test_path.parent.mkdir(parents=True, exist_ok=True)
+            test_path.touch()
+            test_path.unlink()
+            return True
+        except (PermissionError, OSError):
+            return False
     
     def _setup_logging(self):
         """Setup logging configuration."""
@@ -304,8 +391,9 @@ class EnhancedLoggingSystem:
             console_handler.setFormatter(console_formatter)
         root_logger.addHandler(console_handler)
         
-        # File handlers
-        self._setup_file_handlers(formatter)
+        # File handlers (only if file logging is available)
+        if self.use_file_logging:
+            self._setup_file_handlers(formatter)
         
         # Setup specific loggers
         self._setup_component_loggers()
@@ -358,6 +446,19 @@ class EnhancedLoggingSystem:
         # Add filter for audit messages
         audit_handler.addFilter(lambda record: 'audit' in record.name.lower())
         logging.getLogger().addHandler(audit_handler)
+        
+        # S3 log handler for cloud storage
+        try:
+            s3_handler = S3LogHandler(
+                bucket_name="patient-records-20251024",
+                key_prefix="agent-logs/"
+            )
+            s3_handler.setLevel(logging.INFO)
+            s3_handler.setFormatter(formatter)
+            logging.getLogger().addHandler(s3_handler)
+        except Exception:
+            # S3 handler is optional - don't fail if it can't be created
+            pass
     
     def _setup_component_loggers(self):
         """Setup loggers for specific components."""

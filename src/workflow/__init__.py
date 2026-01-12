@@ -1,5 +1,6 @@
 """Workflow orchestration for medical record analysis system."""
 
-from .main_workflow import MainWorkflow, WorkflowProgress
+# Import only what we need for the bedrock workflow
+from .bedrock_workflow import BedrockWorkflow
 
-__all__ = ["MainWorkflow", "WorkflowProgress"]
+__all__ = ["BedrockWorkflow"]
