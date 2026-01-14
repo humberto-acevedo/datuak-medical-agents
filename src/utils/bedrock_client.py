@@ -16,7 +16,8 @@ class BedrockClient:
     # Foundation Model IDs for Claude models
     CLAUDE_SONNET = "anthropic.claude-3-sonnet-20240229-v1:0"
     CLAUDE_HAIKU = "anthropic.claude-3-haiku-20240307-v1:0"
-    CLAUDE_35_HAIKU = "anthropic.claude-3-haiku-20240307-v1:0"  # Use Claude 3 Haiku (already enabled)
+    CLAUDE_35_HAIKU = "anthropic.claude-3-haiku-20240307-v1:0" 
+    CLAUDE_45_HAIKU = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
     
     # Default cross-account role ARN
     DEFAULT_CROSS_ACCOUNT_ROLE = "arn:aws:iam::539247495490:role/MemberCrossAccountRole"
@@ -30,7 +31,7 @@ class BedrockClient:
             model_id: Claude model ID (default: Claude 3.5 Haiku)
         """
         self.region = region
-        self.model_id = model_id or self.CLAUDE_35_HAIKU
+        self.model_id = model_id or self.CLAUDE_45_HAIKU
         
         # Use cross-account role by default
         cross_account_role = os.environ.get('CROSS_ACCOUNT_ROLE_ARN', self.DEFAULT_CROSS_ACCOUNT_ROLE)
