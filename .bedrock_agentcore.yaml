@@ -30,7 +30,7 @@ agents:
     bedrock_agentcore:
       agent_id: src_bedrock_agent_core_lib-mOOPsSDfGx
       agent_arn: arn:aws:bedrock-agentcore:us-east-1:539247495490:runtime/src_bedrock_agent_core_lib-mOOPsSDfGx
-      agent_session_id: 0a392dc4-479e-48b3-ae65-20312bd028ee
+      agent_session_id: 61d3cb72-ed19-42d5-a4e5-bb7605ea5873
     codebuild:
       project_name: bedrock-agentcore-src_bedrock_agent_core_lib-builder
       execution_role: arn:aws:iam::539247495490:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-7ae00180a4

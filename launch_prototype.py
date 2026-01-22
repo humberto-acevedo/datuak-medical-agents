@@ -8,6 +8,7 @@ import os
 import sys
 import asyncio
 import argparse
+import boto3
 import json
 from pathlib import Path
 
@@ -128,8 +129,11 @@ def check_dependencies():
     return True
 
 async def run_prototype_test(use_bedrock: bool = False, use_bedrock_agent: bool = False, 
-                            agent_id: str = None, agent_alias_id: str = None):
+                             agent_id: str = None, agent_alias_id: str = None, use_bedrock_agent_core: bool = False,
+                             patient_name: str = None):
     """Run a quick prototype test."""
+    if use_bedrock_agent_core:
+        print("Starting Medical Records Analysis System - Bedrock Agent Core Version")
     if use_bedrock_agent:
         print("🚀 Starting Medical Record Analysis System - Bedrock Agent Version")
     elif use_bedrock:
@@ -138,7 +142,73 @@ async def run_prototype_test(use_bedrock: bool = False, use_bedrock_agent: bool 
         print("🚀 Starting Medical Record Analysis System - Python Agents Version")
     print("=" * 60)
     
+    client = None
+
     try:
+        if use_bedrock_agent_core:
+            if not agent_id:
+                agent_id = 'bedrock-agentcore'
+                agent_id_arn = 'arn:aws:bedrock-agentcore:us-east-1:539247495490:runtime/src_bedrock_agent_core_lib-mOOPsSDfGx'
+
+            client = boto3.client(agent_id, region_name='us-east-1')
+            
+            # The payload must be bytes, typically a JSON-encoded string
+            payload_data = {
+                "patient_name": patient_name
+            }
+
+            try:
+                response = client.invoke_agent_runtime(
+                    agentRuntimeArn=agent_id_arn,
+                    contentType='application/json',
+                    payload=json.dumps(payload_data).encode('utf-8')
+                )
+
+                result = json.loads(response['response'].read())
+                
+                # Format the output for human readability
+                analysis = result['analysis']
+                print(f"\n{'='*80}")
+                print(f"🏥 MEDICAL ANALYSIS REPORT")
+                print(f"{'='*80}")
+                print(f"Patient: {result['patient_name']}")
+                print(f"Workflow ID: {analysis['workflow_id']}")
+                print(f"Generated: {result['timestamp']}")
+                print(f"\n{'-'*80}")
+                print("📋 MEDICAL SUMMARY")
+                print(f"{'-'*80}")
+                print(analysis['medical_summary'])
+                print(f"\n{'-'*80}")
+                print("🔬 RESEARCH ANALYSIS")
+                print(f"{'-'*80}")
+                print(analysis['research_analysis'])
+                
+                return 0
+                return 0
+
+            except Exception as e:
+                error_msg = str(e)
+                if "AccessDeniedException" in error_msg:
+                    print("\n" + "=" * 80)
+                    print("❌ AWS CREDENTIALS/PERMISSIONS ERROR")
+                    print("=" * 80)
+                    print("The AWS credentials are invalid or don't have permission to invoke Bedrock Agent Core.")
+                    print("\n🔧 SOLUTIONS:")
+                    print("1. Check your AWS credentials:")
+                    print("   aws sts get-caller-identity")
+                    print("\n2. Ensure your AWS profile has Bedrock Agent Core permissions")
+                    print("\n3. Try refreshing your AWS SSO session if using SSO:")
+                    print("   aws sso login --profile your-profile")
+                    print("\n4. Verify the agent ARN is correct and accessible")
+                    print("=" * 80)
+                    return 1
+                else:
+                    print(f"Error invoking bedrock agent core: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    return 1
+            
+
         if use_bedrock_agent:
             # Import Bedrock Agent workflow
             from src.workflow.bedrock_workflow import BedrockWorkflow
@@ -252,6 +322,8 @@ def main():
     parser.add_argument('-v', '--verbose', action='store_true', help='Show credential diagnostics')
     parser.add_argument('--bedrock', action='store_true', 
                        help='Use AWS Bedrock Claude AI instead of Python agents')
+    parser.add_argument('--bedrock-agent-core', '--bedrock_agent_core', action='store_true',
+                       help='Use AWS Bedrock Agent Core (requires patient name)')
     parser.add_argument('--bedrock-agent', action='store_true',
                        help='Use AWS Bedrock Agent (requires deployed agent)')
     parser.add_argument('--agent-id', type=str,
@@ -260,16 +332,25 @@ def main():
                        help='Bedrock Agent Alias ID (required with --bedrock-agent)')
     parser.add_argument('--python', action='store_true',
                        help='Use Python-based agents (default)')
+    parser.add_argument('--patient-name', '--patient_name', type=str,
+                       help='Patient name for analysis (required with --bedrock-agent-core)')
     args = parser.parse_args()
 
     # Determine which version to use
     use_bedrock = args.bedrock
     use_bedrock_agent = args.bedrock_agent
+    use_bedrock_agent_core = args.bedrock_agent_core
     
     # Validate bedrock-agent requirements
     if use_bedrock_agent and (not args.agent_id or not args.agent_alias_id):
         print("❌ Error: --bedrock-agent requires --agent-id and --agent-alias-id")
         print("   Example: python launch_prototype.py --bedrock-agent --agent-id AGENT123 --agent-alias-id ALIAS456")
+        return 1
+    
+    # Validate bedrock-agent-core requirements
+    if use_bedrock_agent_core and not args.patient_name:
+        print("❌ Error: --bedrock-agent-core requires --patient-name")
+        print("   Example: python launch_prototype.py --bedrock-agent-core --patient-name \"Jane Smith\"")
         return 1
     
     # Check dependencies
@@ -281,6 +362,10 @@ def main():
         return 1
     
     # Show version info
+    if use_bedrock_agent_core:
+        print("🤖 Mode: AWS Bedrock Agent")
+        print("   - Agent orchestrates full workflow via AgentCore")
+        print()
     if use_bedrock_agent:
         print("🤖 Mode: AWS Bedrock Agent")
         print(f"   - Agent ID: {args.agent_id}")
@@ -306,7 +391,9 @@ def main():
             use_bedrock=use_bedrock,
             use_bedrock_agent=use_bedrock_agent,
             agent_id=args.agent_id,
-            agent_alias_id=args.agent_alias_id
+            agent_alias_id=args.agent_alias_id,
+            use_bedrock_agent_core=use_bedrock_agent_core,
+            patient_name=args.patient_name
         ))
     except KeyboardInterrupt:
         print("\n\n👋 Prototype test interrupted by user")
